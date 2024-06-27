@@ -2,7 +2,7 @@ body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: "Roboto", sans-serif; 
+    font-family: "Aptos Black", sans-serif; 
 }
 
 header{
@@ -101,6 +101,23 @@ img {
     animation: fadeInDown 2s ease;
 
 }
+
+#scrollToTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex; /* Initially hidden */
+}
+
+#scrollToTopButton:hover {
+    background-color: black;
+}
+
 
 footer{
     background-color: darkgray;
