@@ -422,6 +422,117 @@ header {
   bottom: -5rem;
 }
 
+.open-cart-btn {
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.open-cart-btn:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 600px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.cart.open {
+  right: 0;
+}
+
+.cart-content {
+  padding: 20px;
+  position: relative;
+}
+
+.close-cart-btn,
+.payment-btn {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 700;
+  width: 90px;
+}
+
+.close-cart-btn:hover,
+.payment-btn:hover {
+  background-color: green;
+  color: white;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.cart-total {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.payment-btn {
+  background-color: white;
+  padding: 10px 20px;
+  color: black;
+}
+
+.payment-btn:hover {
+  background-color: green;
+  color: white;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+}
+
+.counter-btn {
+  width: 25px; /* Smaller width */
+  height: 25px; /* Smaller height */
+  font-size: 14px; /* Smaller font size */
+  border: none;
+  background-color: #1C1F25; /* Button background color */
+  color: #fff; /* Button text color */
+  border-radius: 5px; /* Optional: for rounded corners */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px; /* Smaller padding */
+  margin: 0 5px; /* Adjust margin for spacing */
+}
+
+.quantity {
+  margin: 0 10px; /* Space between quantity and buttons */
+}
+
+
 .musthave__nav {
   display: flex;
   align-items: center;
@@ -471,6 +582,7 @@ header {
   display: grid;
   gap: 0.5rem;
   color: var(--text-dark);
+  position: relative; /* Add this to make button positioning relative to the card */
 }
 
 .musthave__card h4 {
@@ -482,6 +594,26 @@ header {
   font-size: 0.9rem;
   font-weight: 500;
   margin-bottom: 1rem;
+}
+
+.musthave__grid .musthave__card button {
+  position: absolute;
+  bottom: 100px; /* Adjust as needed */
+  left: 50%;
+  background-color: #e6572c;
+  color: #fff;
+  width: 80%; /* Adjust as needed */
+  border: none;
+  padding: 20px; /* Adjust as needed */
+  box-shadow: 0 10px 50px #000;
+  cursor: pointer;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.musthave__grid .musthave__card:hover button {
+  transition: 0.5s;
+  opacity: 1;
 }
 
 .footer__container {

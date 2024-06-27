@@ -4,12 +4,6 @@ const signUpLink = document.querySelector('.signUp-link');
 const signInLink = document.querySelector('.signIn-link');
 const wrapper = document.querySelector('.wrapper');
 const closeIcon = document.querySelector('.icon-close');
-const selection = document.getElementById('sorting');
-const field = document.querySelector('.musthave__grid');
-const cards = Array.from(document.querySelectorAll('.musthave__card'));
-const filterItems = document.querySelectorAll('.musthave__nav li');
-const sortingSelect = document.getElementById('sorting');
-const musthaveGrid = document.querySelector('.musthave__grid');
 
 loginLink.addEventListener('click', (e) => {
     e.preventDefault();
@@ -41,6 +35,13 @@ closeIcon.addEventListener('click', function() {
     wrapper.style.display = 'none';
     wrapper.classList.remove('active');
 });
+
+const selection = document.getElementById('sorting');
+const field = document.querySelector('.musthave__grid');
+const cards = Array.from(document.querySelectorAll('.musthave__card'));
+const filterItems = document.querySelectorAll('.musthave__nav li');
+const sortingSelect = document.getElementById('sorting');
+const musthaveGrid = document.querySelector('.musthave__grid');
 
 selection.onchange = sortingValue;
 
@@ -86,4 +87,48 @@ filterItems.forEach(item => {
     });
 });
 
+const form = document.querySelector('#contact-form');
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const mess = document.getElementById('message');
 
+function sendEmail() {
+    const bodyMessage = `Name: ${name.value}<br> Email: ${email.value}<br> Message: ${mess.value}`;
+    
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "dopaminehelpcenter@gmail.com",
+        Password : "D416958F7C3111C55D9F99F9B1832073708C",
+        To : 'dopaminehelpcenter@gmail.com',
+        From : "dopaminehelpcenter@gmail.com",
+        Subject: "Contact Form Message",
+        Body : bodyMessage
+    }).then(
+        message => {
+            if (message == "OK") {
+                Swal.fire({
+                    title: "Success!",
+                    text: "Message sent successfully!",
+                    icon: "success"
+                });
+            } else {
+                Swal.fire({
+                    title: "Error!",
+                    text: "Message failed to send.",
+                    icon: "error"
+                });
+            }
+        }
+    ).catch(error => {
+        Swal.fire({
+            title: "Error!",
+            text: `Message failed to send: ${error}`,
+            icon: "error"
+        });
+    });
+};
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    sendEmail();
+});
