@@ -2,39 +2,35 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     const submitButton = document.getElementById('Submit');
-    const feedbackTextarea = document.getElementById('feedback');
-    const reviewsContainer = document.getElementById('reviews_container');
+    const reviewsContainer = document.getElementById('reviews');
     let selectedRating = 0;
-  
+
     const stars = document.querySelectorAll('.feedback_rating span');
-  
+
     stars.forEach(star => {
-      star.addEventListener('click', function() {
-        const rating = parseInt(this.getAttribute('data-rating'));
-        
-        // Toggle the star selection
-        if (selectedRating === rating) {
-          selectedRating = 0; // Unselect all stars if the same star is clicked again
-        } else {
-          selectedRating = rating;
-        }
-        updateStarColors(selectedRating);
-      });A
+        star.addEventListener('click', function() {
+            const rating = parseInt(this.getAttribute('data-rating'));
+
+            // Toggle the star selection
+            if (selectedRating === rating) {
+                selectedRating = 0; // Unselect all stars if the same star is clicked again
+            } else {
+                selectedRating = rating;
+            }
+            updateStarColors(selectedRating);
+        });
     });
-  
+
     function updateStarColors(rating) {
-      stars.forEach(star => {
-        if (parseInt(star.getAttribute('data-rating')) <= rating) {
-          star.querySelector('i').style.color = '#ffd904'; // gold color
-        } else {
-          star.querySelector('i').style.color = '#000000'; // default color
-        }
-      });
+        stars.forEach(star => {
+            if (parseInt(star.getAttribute('data-rating')) <= rating) {
+                star.classList.add('selected');
+            } else {
+                star.classList.remove('selected');
+            }
+        });
     }
-  
-    
-  });
-  
+});
 
 
 //textbox limit

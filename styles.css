@@ -535,19 +535,6 @@ header {
 
 }
 
-.social__media {
-  font-size: 1.5em;
-  margin-right: 1rem;
-}
-
-.social__media {
-  grid-column: 4 / 5;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-
 @media (width < 900px) {
   header {
     margin-top: 5rem;
@@ -675,6 +662,16 @@ textarea:focus {
 
 /*Social Media Link Styling*/
 
+.social_media {
+  font-size: 1.5em;
+  margin-right: 1rem;
+}
+
+.social_media {
+  grid-column: 4 / 5;
+  flex-direction: column;
+}
+
 .social_cont{
   display: flex;
   justify-content: center;
@@ -749,17 +746,6 @@ textarea:focus {
 
 .social_cont .social_button:nth-child(4) span{
   color: #ff0000;
-}
-
-.social_media {
-  font-size: 1.5em;
-  margin-right: 1rem;
-}
-
-.social_media {
-  grid-column: 4 / 5;
-  flex-direction: column;
-  
 }
 
 .fb-share-button{
@@ -899,17 +885,21 @@ textarea:focus {
   margin-right: 10px;
 }
 
+.ri-star-fill {
+  font-size: 25px;
+}
 
 .feedback_box{
   width: 700px;
   height: 250px;
   box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
   background-color: #ffffff;
-  padding-top: 13px;
-  padding-left: 21px;
+  padding: 30px;
   margin: 10px;
-  
+  cursor: pointer;
+
 }
+
 
 .feedback_box button {
   width: 100px;
@@ -930,11 +920,11 @@ textarea:focus {
   margin-bottom: 5px;
 }
 
-.feedback_box h2 {
+.feedback_box h1 {
   color: green;
   font-size: 28px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  
 }
 
  textarea{
@@ -954,32 +944,29 @@ textarea:focus {
     
   }
 
-.feedback_rating{
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.feedback_rating span{
-  cursor: pointer;
-  transition: color .2s, transform .2s;
-}
-
-.feedback_rating span:hover{
-  color: #ffd904;
-  transform: scale(1.3);
-}
-
-.feedback_rating span:hover ~ span{
-  color: #ffd904;
-}
- 
-.feedback_rating span[click]{
-  color: #ffd904;
-}
-
-.feedback_rating span[click] ~ span {
-  color: #ffd904;
-}
+  .feedback_rating {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  
+  .feedback_rating span {
+    cursor: pointer;
+    transition: color .2s, transform .2s;
+  }
+  
+  .feedback_rating span:hover {
+    color: #ffd904;
+    transform: scale(1.3);
+  }
+  
+  .feedback_rating span:hover ~ span {
+    color: #ffd904;
+  }
+  
+  .feedback_rating span.selected i {
+    color: #ffd904;
+  }
+  
 
 .profile_pic img{
   width: 100%;
