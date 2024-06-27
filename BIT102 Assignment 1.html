@@ -77,7 +77,43 @@
                     </div>
                 </ul>
             </li>
-            <li class="link"><a href="#">SHOPPING CART</a><span><i class="ri-shopping-cart-line"></i></span></li>
+            <li class="open-cart-btn" onclick="toggleCart()"><a href="#">SHOPPING CART</a><span><i class="ri-shopping-cart-line"></i></span></li>
+            
+            <section class="cart" id="cart">
+                <div class="cart-content">
+                    <button class="close-cart-btn" onclick="toggleCart()">CLOSE</button>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                            <!-- Items will be automatically injected here -->
+                        </tbody>
+                    </table>
+                    <div class="cart-total">
+                        <h2>Total: <span id="cart-total">RM0.00</span></h2>
+                    </div>
+                    <div class="button">
+                        <div class="payment-btn" >
+                            <a href="payment.html">
+                                PAYMENT
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+
+            <script type="module" src="cart1.js"></script>
+            <script type="module" src="addToCart.js"></script>
+
         </ul>
     </nav>
 
