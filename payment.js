@@ -14,7 +14,6 @@ function checkCart() {
     }
 }
 
-
 function addCartToHTML() {
     // clear data default
     let listCartHTML = document.querySelector('.returnCart .list');
@@ -24,7 +23,7 @@ function addCartToHTML() {
     let totalPriceHTML = document.querySelector('.totalPrice');
     let totalQuantity = 0;
     let totalPrice = 0;
-    
+
     // if has product in Cart
     if (listCart && listCart.length > 0) {
         listCart.forEach(product => {
@@ -52,6 +51,59 @@ function addCartToHTML() {
     totalQuantityHTML.innerText = totalQuantity;
     totalPriceHTML.innerText = 'RM ' + totalPrice.toFixed(2);
 }
+
+document.getElementById('paymentButton').addEventListener('click', () => {
+    const totalQuantity = document.querySelector('.totalQuantity').innerText;
+    const totalPrice = document.querySelector('.totalPrice').innerText.replace('RM ', '');
+
+    document.getElementById('total_quantity').value = totalQuantity;
+    document.getElementById('total_price').value = totalPrice;
+
+    const form = document.getElementById('paymentForm');
+    const formData = new FormData(form);
+
+    // Send form data to PHP
+    fetch('user_information.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log('Success:', data);
+        // After successful data submission, redirect to the payment API page
+        window.location.href = 'https://rzp.io/l/wTb4NzbQYs';
+    })
+    .catch(error => console.error('Error:', error));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Fetch countries
+    fetch('https://restcountries.com/v3.1/all')
+        .then(response => response.json())
+        .then(data => {
+            const countrySelect = document.getElementById('country');
+            data.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country.cca2;
+                option.text = country.name.common;
+                countrySelect.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching country data:', error));
+
+    // Initialize phone number input with intl-tel-input
+    const phoneInput = document.getElementById('phone');
+    window.intlTelInput(phoneInput, {
+        initialCountry: 'auto',
+        geoIpLookup: function(callback) {
+            fetch('https://ipapi.co/json')
+                .then(response => response.json())
+                .then(data => callback(data.country))
+                .catch(() => callback('us'));
+        },
+        utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js'
+    });
+});
 
 // Call functions to initialize cart
 checkCart();

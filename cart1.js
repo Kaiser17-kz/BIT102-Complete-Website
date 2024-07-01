@@ -116,7 +116,7 @@ export function toggleCart() {
 
 export function checkout() {
     if (cartItems.length > 0) {
-        alert('Proceeding to checkout');
+        alert('Proceeding to payment');
     } else {
         alert('Your cart is empty!');
     }
