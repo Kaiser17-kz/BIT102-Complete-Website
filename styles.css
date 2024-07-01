@@ -74,7 +74,7 @@ body {
 .wrapper {
   position: relative;
   width: 400px;
-  height: 440px;
+  height: 550px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, .5);
   border-radius: 20px;
@@ -160,7 +160,7 @@ h2 {
   font-size: .9em;
   color: #162938;
   font-weight: 500;
-  margin: 10px 0 15px;
+  margin: 20px 0 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -187,8 +187,8 @@ h2 {
 }
 
 .btn {
-  padding: 0.75rem 2rem;
-  font-size: 1.0rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
   outline: none;
   border: none;
   cursor: pointer;
@@ -196,9 +196,9 @@ h2 {
 }
 
 .sign-link {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
-  margin: 25px 0;
+  margin: 30px 0;
 }
 
 .sign-link p {
@@ -380,6 +380,31 @@ h2 {
 
 .remember-forgot a:hover {
   text-decoration: underline;
+}
+
+.or{
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-align:center;
+}
+
+.wrapper .social_icon{
+  text-align: center;
+}
+
+.wrapper .form-wrapper .social_icon i{
+  color:rgb(0, 0, 0);
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border:2px solid #162938;
+  margin:0 15px;
+  transition: 1s;
+}
+
+.wrapper .form-wrapper .social_icon i:hover{
+  background: #ffffff;
+  font-size: 2rem;
+  border:2px solid #162938;
 }
 
 header {
