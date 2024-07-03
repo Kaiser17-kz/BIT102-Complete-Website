@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="styles_userprofile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="userprofile.html">USER PROFILE</a></li>
+                <li><a href="#">SHOPPING CART</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <a href="BIT102 Assignment 1.html"><img src="pic.store/dopamine-logo.png" alt="logo" class="logo-edit"></a>
+        <h1>User Profile</h1>
+    </div>
+
+    <div class="row">
+        <div class="sidebar">
+            <div class="card sidebar-card">
+                <img id="sidebar-img" src="pic.store/userimage.jpeg" class="rounded-circle sidebar-img" width="150" alt="User Image">
+                <input type="file" id="edit-image" class="edit-input" style="display:none;" accept="image/*">
+                <div class="sidebar-content">
+                    <h3 id="sidebar-username">User Name</h3>
+                    <button class="sidebar-button" id="login-button">Log In</button>
+                    <button class="sidebar-button" id="register-button">Register</button>
+                    <button class="sidebar-button" id="logout-button" style="display:none;">Log Out</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 mt-1">
+            <div class="card main-content">
+                <h1 class="content-title">User Information</h1>
+                <div class="card-body">
+                    <div class="content-row">
+                        <div class="content-label">Full Name</div>
+                        <div class="content-text" id="fullname">User Name</div>
+                        <input type="text" id="edit-fullname" class="edit-input" style="display:none;">
+                    </div>
+                    <div class="content-row">
+                        <div class="content-label">Date Of Birth</div>
+                        <div class="content-text" id="dob">01 January 2000</div>
+                        <input type="text" id="edit-dob" class="edit-input" style="display:none;">
+                    </div>
+                    <div class="content-row">
+                        <div class="content-label">Email</div>
+                        <div class="content-text" id="email">abc@gmail.com</div>
+                        <input type="email" id="edit-email" class="edit-input" style="display:none;">
+                    </div>
+                    <hr>
+                    <div class="content-row">
+                        <div class="content-label">Phone Number</div>
+                        <div class="content-text" id="phone">01231223452</div>
+                        <input type="text" id="edit-phone" class="edit-input" style="display:none;">
+                    </div>
+                    <div class="content-row">
+                        <div class="content-label">Address</div>
+                        <div class="content-text" id="address">No1, sjadfadf, sdfadfsdf</div>
+                        <input type="text" id="edit-address" class="edit-input" style="display:none;">
+                    </div>
+                </div>
+                <button id="edit-button">Edit</button>
+                <button id="save-button" style="display:none;">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script_userprofile.js"></script>
+</body>
+</html>
