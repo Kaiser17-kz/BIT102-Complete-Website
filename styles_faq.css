@@ -38,6 +38,11 @@ header nav ul li a{
 
 }
 
+.logo-edit{
+    width: 300px;
+    display: flex;
+}
+
 .wrapper {
     max-width: 75%;
     margin: auto;
