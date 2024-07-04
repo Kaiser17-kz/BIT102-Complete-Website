@@ -33,6 +33,7 @@ header nav ul li a {
   width: 300px;
   display: flex;
   margin: 0 auto;
+  margin-top: 10px;
 }
 
 .wrapper {
