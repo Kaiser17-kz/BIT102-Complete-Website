@@ -422,6 +422,10 @@ header {
   gap: 2rem;
 }
 
+.header__container a {
+  color: #fff;
+}
+
 .header__content p {
   font-size: 1.3rem;
   font-weight: 600;
