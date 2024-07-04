@@ -39,8 +39,15 @@ header nav ul li a{
 }
 
 .logo-edit{
-    width: 300px;
+    width: 400px;
     display: flex;
+    margin-top: 10px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
 }
 
 .wrapper {
