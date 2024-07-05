@@ -63,7 +63,7 @@ let listCart = [];
             const formData = new FormData(form);
 
             // Send form data to PHP
-            fetch('user_information.php', {
+            fetch('user_payment.php', {
                 method: 'POST',
                 body: formData
             })
