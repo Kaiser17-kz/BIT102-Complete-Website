@@ -455,6 +455,7 @@ header {
   bottom: -5rem;
 }
 
+/* Shopping cart Button*/
 .open-cart-btn a {
   padding: 0 0.5rem;
   font-size: 1.0rem;
@@ -463,12 +464,13 @@ header {
   transition: 0.3s;
 }
 
+/*The hover of shopping cart button*/
 .open-cart-btn a:hover {
   color: var(--text-dark);
   background-color: #abb5cc;
 }
 
-
+/*The section of shopping cart*/
 .cart {
   position: fixed;
   top: 0;
@@ -481,6 +483,7 @@ header {
   z-index: 1000;
 }
 
+/*The opening of the shopping cart*/
 .cart.open {
   right: 0;
 }
@@ -496,15 +499,18 @@ header {
   right: 10px;
 }
 
+/*The color of the payment button*/
 .payment-btn a {
   color: black;
   text-decoration: none;
 }
 
+/*The hover of the payment button*/
 .payment-btn a:hover {
   color: white;
 }
 
+/*The layout of the close button in the shopping cart*/
 .close-cart-btn,
 .payment-btn {
   background-color: white;
@@ -517,6 +523,7 @@ header {
   width: 100px;
 }
 
+/*The hover of the close button*/
 .close-cart-btn:hover,
 .payment-btn:hover {
   background-color: rgb(0, 0, 0);
@@ -524,19 +531,11 @@ header {
 }
 
 
-.payment-btn a {
-  color: black;
-  text-decoration: none; /* To remove the underline, if any */
-}
-
-.payment-btn a:hover {
-  color: white; /* This ensures the text color changes to white on hover, matching the button's hover state */
-}
-
 h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
 }
+
 
 table {
   width: 100%;
@@ -544,6 +543,7 @@ table {
   margin-bottom: 20px;
 }
 
+/*The details of the shopping cart*/
 table th, table td {
   border: 1px solid #ddd;
   padding: 10px;
