@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Prepare and bind
-$stmt = $conn->prepare("INSERT INTO user_information (name, phone, address, country, city, total_quantity, total_price) VALUES (?, ?, ?, ?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO user_payment (name, phone, address, country, city, total_quantity, total_price) VALUES (?, ?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("sssssid", $name, $phone, $address, $country, $city, $total_quantity, $total_price);
 
 // Set parameters and execute
