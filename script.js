@@ -7,14 +7,14 @@ const closeIcon = document.querySelector('.icon-close');
 
 loginLink.addEventListener('click', (e) => {
     e.preventDefault();
-    wrapper.style.display = 'block';
+    wrapper.style.display = 'flex';
     document.querySelector('.sign-in').style.display = 'block';
     document.querySelector('.sign-up').style.display = 'none';
 });
 
 registerLink.addEventListener('click', (e) => {
     e.preventDefault();
-    wrapper.style.display = 'block';
+    wrapper.style.display = 'flex';
     document.querySelector('.sign-in').style.display = 'none';
     document.querySelector('.sign-up').style.display = 'block';
 });
@@ -33,7 +33,6 @@ signInLink.addEventListener('click', (e) => {
 
 closeIcon.addEventListener('click', function() {
     wrapper.style.display = 'none';
-    wrapper.classList.remove('active');
 });
 
 const selection = document.getElementById('sorting');

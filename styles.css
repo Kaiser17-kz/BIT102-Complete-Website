@@ -72,19 +72,23 @@ body {
 }
 
 .wrapper {
-  position: relative;
-  width: 400px;
-  height: 440px;
-  background: transparent;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 550px;
+  background:#fff;
   border: 2px solid rgba(255, 255, 255, .5);
   border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   transition: transform .5s ease, height .2s ease;
+  z-index: 1000;
 }
 
 .wrapper .icon-close {
@@ -160,7 +164,7 @@ h2 {
   font-size: .9em;
   color: #162938;
   font-weight: 500;
-  margin: 10px 0 15px;
+  margin: 20px 0 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -187,8 +191,8 @@ h2 {
 }
 
 .btn {
-  padding: 0.75rem 2rem;
-  font-size: 1.0rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
   outline: none;
   border: none;
   cursor: pointer;
@@ -196,9 +200,9 @@ h2 {
 }
 
 .sign-link {
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
-  margin: 25px 0;
+  margin: 30px 0;
 }
 
 .sign-link p {
@@ -382,6 +386,31 @@ h2 {
   text-decoration: underline;
 }
 
+.or{
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-align:center;
+}
+
+.wrapper .social_icon{
+  text-align: center;
+}
+
+.wrapper .form-wrapper .social_icon i{
+  color:rgb(0, 0, 0);
+  padding: 1rem 2rem;
+  cursor: pointer;
+  border:2px solid #162938;
+  margin:0 15px;
+  transition: 1s;
+}
+
+.wrapper .form-wrapper .social_icon i:hover{
+  background: #ffffff;
+  font-size: 2rem;
+  border:2px solid #162938;
+}
+
 header {
   margin-top: 10rem;
   background-color: var(--primary-color);
@@ -391,6 +420,10 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+}
+
+.header__container a {
+  color: #fff;
 }
 
 .header__content p {
@@ -453,10 +486,23 @@ header {
 }
 
 .cart-content {
-  padding: 20px;
   position: relative;
-  height: calc(100% - 80px); 
-  overflow-y: auto; 
+  padding-bottom: 50px; /* To make sure the content above doesn't overlap the button */
+}
+
+.button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.payment-btn a {
+  color: black;
+  text-decoration: none;
+}
+
+.payment-btn a:hover {
+  color: white;
 }
 
 .close-cart-btn,
@@ -468,13 +514,23 @@ header {
   cursor: pointer;
   font-size: 1em;
   font-weight: 700;
-  width: 90px;
+  width: 100px;
 }
 
 .close-cart-btn:hover,
 .payment-btn:hover {
-  background-color: green;
+  background-color: rgb(0, 0, 0);
   color: white;
+}
+
+
+.payment-btn a {
+  color: black;
+  text-decoration: none; /* To remove the underline, if any */
+}
+
+.payment-btn a:hover {
+  color: white; /* This ensures the text color changes to white on hover, matching the button's hover state */
 }
 
 h1 {
