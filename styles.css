@@ -489,8 +489,10 @@ header {
 }
 
 .cart-content {
+  padding: 20px;
   position: relative;
-  padding-bottom: 50px; /* To make sure the content above doesn't overlap the button */
+  height: calc(100% - 80px); 
+  overflow-y: auto; 
 }
 
 .button {
