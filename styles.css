@@ -455,7 +455,7 @@ header {
   bottom: -5rem;
 }
 
-/* Shopping cart Button*/
+/* Shopping cart Button */
 .open-cart-btn a {
   padding: 0 0.5rem;
   font-size: 1.0rem;
@@ -464,13 +464,13 @@ header {
   transition: 0.3s;
 }
 
-/*The hover of shopping cart button*/
+/* The hover of shopping cart button */
 .open-cart-btn a:hover {
   color: var(--text-dark);
   background-color: #abb5cc;
 }
 
-/*The section of shopping cart*/
+/* The section of shopping cart */
 .cart {
   position: fixed;
   top: 0;
@@ -483,34 +483,43 @@ header {
   z-index: 1000;
 }
 
-/*The opening of the shopping cart*/
+/* The opening of the shopping cart */
 .cart.open {
   right: 0;
 }
 
 .cart-content {
+  padding: 20px;
   position: relative;
-  padding-bottom: 50px; /* To make sure the content above doesn't overlap the button */
+  height: calc(100% - 80px); 
+  overflow-y: auto; 
 }
 
+/* Fixed button container inside the cart */
 .button {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001; /* Ensure it stays above other elements */
 }
 
-/*The color of the payment button*/
+/* The color of the payment button */
 .payment-btn a {
   color: black;
   text-decoration: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 700;
+  width: 130px;
 }
 
-/*The hover of the payment button*/
+/* The hover of the payment button */
 .payment-btn a:hover {
   color: white;
 }
 
-/*The layout of the close button in the shopping cart*/
+/* The layout of the close button in the shopping cart */
 .close-cart-btn,
 .payment-btn {
   background-color: white;
@@ -520,22 +529,20 @@ header {
   cursor: pointer;
   font-size: 1em;
   font-weight: 700;
-  width: 100px;
+  width: 150px;
 }
 
-/*The hover of the close button*/
+/* The hover of the close button */
 .close-cart-btn:hover,
 .payment-btn:hover {
   background-color: rgb(0, 0, 0);
   color: white;
 }
 
-
 h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
 }
-
 
 table {
   width: 100%;
@@ -543,7 +550,7 @@ table {
   margin-bottom: 20px;
 }
 
-/*The details of the shopping cart*/
+/* The details of the shopping cart */
 table th, table td {
   border: 1px solid #ddd;
   padding: 10px;
@@ -555,19 +562,8 @@ table th, table td {
   margin-bottom: 20px;
 }
 
-.payment-btn {
-  background-color: white;
-  color: black;
-  border: 2px solid black;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1em;
-  font-weight: 700;
-  width: 130px;
-}
-
 .payment-btn:hover {
-  background-color: green;
+  background-color: black;
   color: white;
 }
 
@@ -595,7 +591,6 @@ table th, table td {
 .quantity {
   margin: 0 10px; /* Space between quantity and buttons */
 }
-
 
 .musthave__nav {
   display: flex;
@@ -697,8 +692,9 @@ table th, table td {
 /* Set the hover and focus color for better visibility */
 .iti__country:hover,
 .iti__country:focus {
-  background-color: #f1f1f1;
+ background-color: #f1f1f1;
 }
+
 
 .footer__container {
   display: grid;
