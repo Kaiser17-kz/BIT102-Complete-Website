@@ -21,6 +21,7 @@
   padding: 5rem 1rem;
 }
 
+/* musthave title */ 
 .section__title {
   padding-bottom: 0.5rem;
   margin-bottom: 4rem;
@@ -42,20 +43,13 @@
   background-color:blue;
 }
 
+/* store logo */
 .logo-edit{
   width: 300px;
   display: flex;
 }
 
-.btn {
-  padding: 0.75rem 2rem;
-  font-size: 1.0rem;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
+/* login / register button */  
 a {
   text-decoration: none;
 }
@@ -71,6 +65,7 @@ body {
   font-weight: 400;
 }
 
+/*auhtentication form */
 .wrapper {
   position: fixed;
   top: 50%;
@@ -106,15 +101,6 @@ body {
   border-radius: 50%;
   cursor: pointer;
   z-index: 1;
-}
-
-.form-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
 }
 
 h2 {
@@ -223,6 +209,7 @@ h2 {
   display: none;
 }
 
+/* header */
 .nav__links .dropdown li {
   display: block;
 }
@@ -782,6 +769,7 @@ table th, table td {
   }
 }
 
+/* contact us form */
 .contact {
   min-height: 100vh;
   background-color: #e8f0fe;
