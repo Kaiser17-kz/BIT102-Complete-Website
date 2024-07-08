@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>DoPaMine One Stop Fashion Shop</title>
@@ -88,6 +87,7 @@
                         </div>
                     </form>
                 </div>
+                <script src="auth.js" defer></script>
             </div>  
 
             <li class="open-cart-btn" onclick="toggleCart()"><a href="#">SHOPPING CART</a><span><i class="ri-shopping-cart-line"></i></span></li>
@@ -155,6 +155,7 @@
                 <option value="LowToHigh">Low to High</option>
                 <option value="HighToLow">High to Low</option>
             </select>
+            <script src="sort.js" defer></script>
         </div>
         <div class="musthave__grid" data-category="WOMEN">
             <div class="musthave__card" data-category="WOMEN">
@@ -284,21 +285,23 @@
             <div class="contact-wrapper">
                 <div class="contact-form">
                     <h4>Send us a message</h4>
-                    <form class="contact_us">
+                    <form id="contact-form" class="contact_us">
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name">
+                            <input type="text" id="name" name="name" placeholder="Your Name">
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email">
+                            <input type="email" id="email" name="email" placeholder="Your Email">
                         </div>
                         <div class="form-group">
-                            <textarea name="message" placeholder="Your Message"></textarea>
+                            <textarea id="message" name="message" placeholder="Your Message"></textarea>
                         </div>
                         <button type="submit">Send Message</button>
                     </form>
                 </div>
             </div>
+            <script src="contForm.js" defer></script>
         </div>
+        
         
         <div class="footer__col">
             <h4 class="footer__heading">ABOUT US</h4>
@@ -338,7 +341,6 @@
 
     </footer>
 
-    <script src="script.js"></script>
     <script src="search_bar.js"></script>
 
 </body>
