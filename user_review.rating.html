@@ -5,8 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Customer Review</title>
+    <!--Remix Icon-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
+    <!--Boot Strap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!--jQuery (to handle Ajax request and event handling)-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--Javascript BootStrap (to enable behavior for BootStrap)-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--Integrity and anonymous are attributes set to establish security and its integrity when fetching resources from external sites listed in the href and src!-->
     <link rel="stylesheet" href="styles.css">
+
 </head>
   <body>
     <div class="header__bar">Free Shipping Within Malaysia On All Orders RM150 & above</div>
@@ -77,125 +88,105 @@
             <li class="link"><a href="#">SHOPPING CART</a><span><i class="ri-shopping-cart-line"></i></span></li>
     </nav>
     
-    <section id="reviews">
+    <!--Total Overview Rating and Review -->
+  <section id="reviews">
     <div class="reviews_heading">
-        <span>Reviews</span>
-        <h4>Customer Says</h4>
+      <span>Reviews</span>
+      <h4>Customer Says</h4>
     </div>
     <div class="reviews">
-        <div class="reviews_box">
-            <div class="box_top">
-                <div class="profile">
-                    <div class="profile_pic">
-                        <img src="pic.store/Henry_Cavill.webp"/>
-                    </div>
-                    <div class="name_user">
-                        <strong>Henrycavilstronk</strong>
-                        <span>@henrycavill17</span>
-                    </div>
+      <div class="container">
+        <div class="card">
+          <div class="card-header">Total Reviews</div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-4 text-center">
+                <h1 class="text-warning mt-4 mb-4">
+                  <b><span id="average_rating">0.0</span> / 5</b>
+                </h1>
+                <div class="mb-3">
+                  <i class="ri-star-fill star-light mr-1 main_star"></i>
+                  <i class="ri-star-fill star-light mr-1 main_star"></i>
+                  <i class="ri-star-fill star-light mr-1 main_star"></i>
+                  <i class="ri-star-fill star-light mr-1 main_star"></i>
+                  <i class="ri-star-fill star-light mr-1 main_star"></i>
                 </div>
-                <div class="rating">
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                </div>
+                <h3><span id="total_review">0</span> Review</h3>
+              </div>
+              <div class="col-sm-8">
+                <!-- Progress bars for each star rating -->
+                <p>
+                  <div class="progress-label-left"><b>5</b> <i class="ri-star-fill text-warning"></i></div>
+                  <div class="progress-label-right">(<span id="total_five_star_review">0</span>)</div>
+                  <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="five_star_progress"></div>
+                  </div>
+                </p>
+                <p>
+                  <div class="progress-label-left"><b>4</b> <i class="ri-star-fill text-warning"></i></div>
+                  <div class="progress-label-right">(<span id="total_four_star_review">0</span>)</div>
+                  <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="four_star_progress"></div>
+                  </div>
+                </p>
+                <p>
+                  <div class="progress-label-left"><b>3</b> <i class="ri-star-fill text-warning"></i></div>
+                  <div class="progress-label-right">(<span id="total_three_star_review">0</span>)</div>
+                  <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="three_star_progress"></div>
+                  </div>
+                </p>
+                <p>
+                  <div class="progress-label-left"><b>2</b> <i class="ri-star-fill text-warning"></i></div>
+                  <div class="progress-label-right">(<span id="total_two_star_review">0</span>)</div>
+                  <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="two_star_progress"></div>
+                  </div>
+                </p>
+                <p>
+                  <div class="progress-label-left"><b>1</b> <i class="ri-star-fill text-warning"></i></div>
+                  <div class="progress-label-right">(<span id="total_one_star_review">0</span>)</div>
+                  <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="one_star_progress"></div>
+                  </div>
+                </p>
+              </div>
             </div>
-            <div class="client_comment">
-                <p>I like the fashion product Dopamine produce! The quality of the clothing is nice and I got a good deal for 9.9 sale. The shipping is also fast and quick.</p>
-            </div>
+          </div>
         </div>
-        <div class="reviews_box">
-            <div class="box_top">
-                <div class="profile">
-                    <div class="profile_pic">
-                        <img src="pic.store/melly.jpeg"/>
-                    </div>
-                    <div class="name_user">
-                        <strong>SpeedShowRee</strong>
-                        <span>@christianmel34</span>
-                    </div>
-                </div>
-                <div class="rating">
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                </div>
-            </div>
-            <div class="client_comment">
-                <p>The standard for the product is top-notch! The dress I bought from the store is exactly as described.</p>
-            </div>
-        </div>
-        <div class="reviews_box">
-            <div class="box_top">
-                <div class="profile">
-                    <div class="profile_pic">
-                        <img src="pic.store/nba.avif"/>
-                    </div>
-                    <div class="name_user">
-                        <strong>NebraskaLR</strong>
-                        <span>@nebraska24</span>
-                    </div>
-                </div>
-                <div class="rating">
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                </div>
-            </div>
-            <div class="client_comment">
-                <p>Dopamine delivery is top-tier! I ordered the product and got it within 2 delivery days. However, the customer service is still horrible, I got no respond since I posted a help inquiry three days ago.</p>
-            </div>
-        </div>
-        <div class="reviews_box">
-            <div class="box_top">
-                <div class="profile">
-                    <div class="profile_pic">
-                        <img src="pic.store/cat.jpg" />
-                    </div>
-                    <div class="name_user">
-                        <strong>KellyHAHA</strong>
-                        <span>@kellyoubre77</span>
-                    </div>
-                </div>
-                <div class="rating">
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                    <i class="ri-star-fill"></i>
-                </div>
-            </div>
-            <div class="client_comment">
-                <p>I got a good deal with a voucher I got from the birthday offer, I got a shirt that I been eye-ing for and I feel so happy after getting it!</p>
-            </div>
-        </div>
+      </div>
+      <!--Review will appear here-->
+      <div class="mt-5" id="review_content">
+      </div>
+      <!--Feedback Form-->
+      <form id="Form">
         <div class="feedback_box">
             <div class="box_top">
-                <div class="profile">
-                    <div class="feedback">
-                        <h1>Share your feedback here!</h1>
-                        <div class="rating_review">
-                            <div review-id = "1" class="feedback_rating">
-                                <span data-rating="5"><i class="ri-star-fill"></i></span>
-                                <span data-rating="4"><i class="ri-star-fill"></i></span>
-                                <span data-rating="3"><i class="ri-star-fill"></i></span>
-                                <span data-rating="2"><i class="ri-star-fill"></i></span>
-                                <span data-rating="1"><i class="ri-star-fill"></i></span>
-                            </div>
-                        </div>
-                        <textarea  id="type_text" placeholder="Type here..."></textarea>
-                        <p class="text-box" id="text_total">0/500</p>
-                        <button id="Submit">Submit</button>
+               <div class="profile">
+                  <div class="feedback">
+                    <h1>Share your feedback here!</h1>
+                    <div class="rating_review">
+                      <div class="feedback_rating">
+                        <span data-rating="5"><i class="ri-star-fill"></i></span>
+                        <span data-rating="4"><i class="ri-star-fill"></i></span>
+                        <span data-rating="3"><i class="ri-star-fill"></i></span>
+                        <span data-rating="2"><i class="ri-star-fill"></i></span>
+                        <span data-rating="1"><i class="ri-star-fill"></i></span>
+                      </div>
                     </div>
+                    <div class="user_name">
+                      <textarea name="name" id="name_text" placeholder="Name..."></textarea>
+                    </div>
+                    <div class="comment_review" >
+                      <textarea name="comment" id="type_text" placeholder="Type here..."></textarea>
+                    </div>
+                    <p class="text-box" id="text_total">0/500</p>
+                    <input type="submit" id="Submit" value="Submit" class="btn btn-primary"></input>
                 </div>
+              </div>
             </div>
-        </div>
+          </div>
+      </form>
     </div>
   </section>
 
