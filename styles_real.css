@@ -19,6 +19,10 @@ header nav ul {
     justify-content: center;
 }
 
+header nav ul li a.active {
+    border-bottom: 2px solid #ff6347;
+}
+
 header nav ul li {
     margin: 0 15px;
 }
@@ -89,9 +93,10 @@ img {
     flex: 2;
     text-align: center;
     font-size: 3em;
-    padding:20px;
+    padding: 20px;
     margin-bottom: 15px;
     animation: fadeInDown 2s ease;
+    margin-top: 0%;
 }
 
 .story .container p {
@@ -119,12 +124,7 @@ img {
 }
 
 
-footer{
-    background-color: darkgray;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
+
 
 @keyframes fadeInUp {
     0%{
@@ -159,4 +159,308 @@ footer{
     }
 }
 
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .footer__heading {
+    color: green;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .footer__heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 50px;
+    background-color: brown;
+  }
+  
+  .footer__col p {
+    font-size: 1.0rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .footer__col p:hover {
+    color: rgb(206, 63, 87);
+  }
+  
+  .footer__col p i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .footer__link {
+    display: block;
+    font-size: 1rem;
+    font-style: oblique;
+    margin-bottom: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+  
+  }
+
+
+.footer__link:hover {
+    color: rgb(206, 63, 87);
+}
+  
+  @media (width < 900px) {
+    header {
+      margin-top: 5rem;
+    }
+  
+    .musthave__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+  }
+  
+  @media (width < 600px) {
+    .nav__links {
+      display: none;
+    }
+  
+    header {
+      margin-top: 0;
+    }
+  
+    .header__container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .header__image {
+      display: none;
+    }
+  
+    .musthave__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .footer__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .contact {
+    min-height: 100vh;
+    background-color: #e8f0fe;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .contact_container {
+    max-width: 190px;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  
+  .contaxt-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+  }
+  
+  .contact-form {
+    text-align: left;
+    
+  }
+  
+  .contact-form h4 {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: normal;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    
+  }
+  
+  .form-group textarea{
+    max-width: 190px;
+    max-height: 100px;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    
+  }
+  
+  .form-group input{
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid;
+    background-color: #ffffff;
+    color: #333;
+  } 
+  
+  input:focus,
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px #bbb;
+  }
+  
+  .contact_us button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .contact_us button:hover {
+    background-color: #45a049;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+    .contact-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /*Social Media Link Styling*/
+  
+  .social_media {
+    font-size: 1.5em;
+    margin-right: 1rem;
+  }
+  
+  .social_media {
+    grid-column: 4 / 5;
+    flex-direction: column;
+  }
+  
+  .social_cont{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  
+  .social_cont .social_button{
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    margin: 0 5px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+  }
+  .social_cont .social_button:hover{
+    width: 200px;
+  }
+  .social_cont .social_button .social_icon{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 6px;
+    transition: all 0.3s ease-out;
+  }
+  
+  .social_cont .social_button:nth-child(1):hover .social_icon{
+    background: #e1306c;
+  }
+  .social_cont .social_button:nth-child(2):hover .social_icon{
+    background: #1DA1F2;
+  }
+  
+  .social_cont .social_button:nth-child(3):hover .social_icon{
+    background: #4267B2;
+  }
+  
+  .social_cont .social_button:nth-child(4):hover .social_icon{
+    background: #ff0000;
+  }
+  .social_cont .social_button .social_icon i{
+    font-size: 30px;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+  }
+  .social_cont .social_button:hover .social_icon i{
+    color: #fff;
+  }
+  .social_cont .social_button span{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+  }
+  .social_cont .social_button:nth-child(1) span{
+    color: #E1306C;
+  }
+  .social_cont .social_button:nth-child(2) span{
+    color: #1DA1F2;
+  }
+  .social_cont .social_button:nth-child(3) span{
+    color: #4267B2;
+  }
+  
+  .social_cont .social_button:nth-child(4) span{
+    color: #ff0000;
+  }
+  
+  .fb-share-button{
+   margin-top: 15px;
+   
+  }
+  
+  .ri-facebook-box-fill{
+    color: 	#1877F2;
+  }
+  
+  .ri-twitter-x-line{
+    color: #000000;
+  }
+  
+  .ri-instagram-line{
+      background: radial-gradient(circle at 30% 110%,
+              #feda75 0%,
+              #fa7e1e 25%,
+              #d62976 50%,
+              #962fbf 75%,
+              #4f5bd5 100%);
+      color: #f1faff ;
+      border-radius: 5px;
+      align-items: center;
+    }
+  
+  .ri-youtube-fill{
+    color: red ;
+  
+  }
 
