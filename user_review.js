@@ -21,51 +21,41 @@ $(document).ready(function() {
         updateStarColors(rating_data);
     });
 
-    $('#add_review').click(function(){
-
-        $('#review_modal').modal('show');
-
-    });
-
     $('#Submit').click(function(event) {
         event.preventDefault();
 
         var user_name = $('#name_text').val().trim();
         var user_review = $('#type_text').val().trim();
 
-        if (user_name === '' || user_review === '') {
-            alert("Please Fill Both Fields");
-            return false;
-        } else {
-            $.ajax({
-                url: "submit_rating.php", 
-                method: "POST",
-                data: {
-                    rating_data: rating_data,
-                    user_name: user_name,
-                    user_review: user_review
-                },
-                success: function(data) {
-                    $('#name_text').val('');
-                    $('#type_text').val('');
-                    rating_data = 0;
-                    load_rating_data();
-                    updateStarColors(rating_data);
-                    alert(data.message ? data.message : data.error);
-                },
-                error: function(xhr, status, error) {
-                    console.error(xhr.responseText);
-                    alert('Error: ' + error);
-                }
-            });
-        }
+        $.ajax({
+            url: "user_review.rating.php", 
+            method: "POST",
+            data: {
+                rating_data: rating_data,
+                user_name: user_name,
+                user_review: user_review
+            },
+            success: function(data) {
+                $('#name_text').val('');
+                $('#type_text').val('');
+                rating_data = 0;
+                load_rating_data();
+                updateStarColors(rating_data);
+                alert(data.message ? data.message : data.error);
+            },
+            error: function(xhr, status, error) {
+                console.error(xhr.responseText);
+                alert('Error: ' + error);
+            }
+        });
+
     });
 
     load_rating_data();
 
     function load_rating_data(){
         $.ajax({
-            url: "submit_rating.php",
+            url: "user_review.rating.php",
             method: "POST",
             data: { action: 'load_data' },
             dataType: "JSON",
@@ -127,6 +117,7 @@ $(document).ready(function() {
                             html += '</div>'; // End of box_top div
                             html += '<div class="client_comment">';
                             html += '<p>' + review.user_Review + '</p>';
+                            html += '<div class="text-right">On '+ review.date_Time +'</div>';
                             html += '</div>'; // End of client_comment div
                             html += '</div>'; // End of reviews_box div
                         });
@@ -144,3 +135,4 @@ $(document).ready(function() {
 
 
 });
+
