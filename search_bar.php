@@ -16,32 +16,31 @@ if ($conn->connect_error) {
 // Function to insert clothing data
 function insertClothingData($conn) {
     $clothing_data = [
-        ['pic.store/color-shirt.jpg', 'Colorful Button Shirt', 59.00],
-        ['pic.store/Jacket.avif', 'Blue "Actual" Jacket', 79.00],
-        ['pic.store/cartoon.jpeg', 'Chess Pattern Shirt', 49.90],
-        ['pic.store/pants.jpg', 'Light Blue Pants', 59.00],
-        ['pic.store/kids.webp', 'Floral Green Dress', 39.00],
-        ['pic.store/Cartoon dress.webp', 'Blue Angle Dress', 39.00],
-        ['pic.store/child.webp', 'Gradient Green Shirt', 99.00],
-        ['pic.store/keiko-tshirt.webp', 'KEIKO Long-sleeved Shirt', 79.00],
-        ['pic.store/nice.jpeg', 'Graffiti Button Shirt', 59.90],
-        ['pic.store/tracksuit.avif', 'Gray Hoodie', 129.90],
-        ['pic.store/color-bear.webp', 'Colorful Bear Bear', 59.90],
-        ['pic.store/green.avif', 'Cute Fairy Dress', 79.90],
-        ['pic.store/elder.webp', 'SunFlower Dress', 69.00],
-        ['pic.store/older people.webp', 'Open Front Outerwear & Crew Neck Tank Dress', 95.00],
-        ['pic.store/elder1.webp', 'Black Elegent Dress', 80.00]
+        ['Colorful Button Shirt', 59.00],
+        ['Blue "Actual" Jacket', 79.00],
+        ['Chess Pattern Shirt', 49.90],
+        ['Light Blue Pants', 59.00],
+        ['Floral Green Dress', 39.00],
+        ['Blue Angle Dress', 39.00],
+        ['Gradient Green Shirt', 99.00],
+        ['KEIKO Long-sleeved Shirt', 79.00],
+        ['Graffiti Button Shirt', 59.90],
+        ['Gray Hoodie', 129.90],
+        ['Colorful Bear Bear', 59.90],
+        ['Cute Fairy Dress', 79.90],
+        ['SunFlower Dress', 69.00],
+        ['Open Front Outerwear & Crew Neck Tank Dress', 95.00],
+        ['Black Elegent Dress', 80.00]
     ];
 
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO product_listing (img, product_name, price) VALUES (?, ?, ?)");
-    $stmt->bind_param("ssd", $img, $name, $price);
+    $stmt = $conn->prepare("INSERT INTO product_listing (product_name, price) VALUES (?, ?)");
+    $stmt->bind_param("sd", $name, $price);
 
     // Loop through the data and execute the prepared statement
     foreach ($clothing_data as $item) {
-        $img = $item[0];
-        $name = $item[1];
-        $price = $item[2];
+        $name = $item[0];
+        $price = $item[1];
         $stmt->execute();
     }
 
