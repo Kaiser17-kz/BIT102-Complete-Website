@@ -1,7 +1,6 @@
-/*Search Function Javascript*/
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
-    const query= urlParams.get('search');
+    const query = urlParams.get('search');
     const resultsCont = document.getElementById('search_results');
 
     if (query) {
@@ -39,4 +38,26 @@ document.addEventListener('DOMContentLoaded', function() {
             resultsCont.innerHTML = '<h2>No results found.</h2>';
         }
     }
+
+    // Live search functionality
+    $("#search").keyup(function() {
+        var name = $('#search').val();
+        if (name == "") {
+            $("#display").html("").hide();
+        } else {
+            $.ajax({
+                type: "POST",
+                url: "search_bar.php",
+                data: { search: name },
+                success: function(html) {
+                    $("#display").html(html).show();
+                }
+            });
+        }
+    });
 });
+
+function fill(Value) {
+    $('#search').val(Value);
+    $('#display').hide();
+}
