@@ -8,7 +8,10 @@ $_SESSION = array();
 // Destroy the session
 session_destroy();
 
-// Redirect to the login page or homepage
-header("Location: BIT102 Assignment 1.html");
+// Display an alert message and redirect to the homepage or login page
+echo '<script type="text/javascript">
+        alert("You have successfully logged out.");
+        window.location.href = "BIT102 Assignment 1.html";
+      </script>';
 exit;
 ?>
