@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles_searchbar.css">
     <title>DoPaMine One Stop Fashion Shop</title>
@@ -19,7 +20,7 @@
                 <section>
                     <div class="search_bar">
                       <form action="search_result.html" method="GET">
-                          <input type="text" id="search" placeholder="Search.." name="search" autocomplete="off">
+                          <input type="text" id="search" placeholder="Search.." name="search">
                           <button type="submit"><i class="ri-search-line"></i></button>
                       </form>
                       <div id="display"></div>
@@ -93,39 +94,37 @@
 
           <li class="open-cart-btn" onclick="toggleCart()"><a href="#">SHOPPING CART</a><span><i class="ri-shopping-cart-line"></i></span></li>
 
-          <section class="cart" id="cart">
-              <div class="cart-content">
-                  <button class="close-cart-btn" onclick="toggleCart()">CLOSE</button>
-               <br><br>
-                  <table>
-                      <thead>
-                          <tr>
-                              <th>Image</th>
-                              <th>Product</th>
-                              <th>Price</th>
-                              <th>Quantity</th>
-                              <th>Total</th>
-                              <th>Action</th>
-                       </tr>
-                      </thead>
-                   <tbody id="cart-items">
-                       <!-- Items will be automatically injected here -->
-                      </tbody>
-                  </table>
-                  <div class="cart-total">
-                      <h2>Total: <span id="cart-total">RM0.00</span></h2>
-               </div>
-              </div>
-              <div class="button">
-               <button class="payment-btn" onclick="checkout()"><a href="payment.html">PAYMENT</a></button>
-              </div>
-          </section>
-          
+            <section class="cart" id="cart">
+                <div class="cart-content">
+                    <button class="close-cart-btn" onclick="toggleCart()">CLOSE</button>
+                 <br><br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                         </tr>
+                        </thead>
+                     <tbody id="cart-items">
+                         <!-- Items will be automatically injected here -->
+                        </tbody>
+                    </table>
+                    <div class="cart-total">
+                        <h2>Total: <span id="cart-total">RM0.00</span></h2>
+                 </div>
+                </div>
+                <div class="button">
+                 <button class="payment-btn" onclick="checkout()"><a href="payment.html">PAYMENT</a></button>
+                </div>
+            </section>
 
-          <script type="module" src="cart1.js"></script>
-          <script type="module" src="addToCart.js"></script>
+            <script type="module" src="cart1.js"></script>
+            <script type="module" src="addToCart.js"></script>
 
-          
     </nav>
 
     <div class="section__container result__container">
