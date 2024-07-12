@@ -33,7 +33,7 @@ if (isset($_POST["login"])) {
         
         if ($user) {
             if (password_verify($password, $user["password"])) {
-                echo "<script>alert('Login successfully.'); window.location.href = 'BIT102 Assignment 1.html';</script>";
+                echo "<script>alert('Login successfully.'); window.location.href = 'BIT102 Assignment 1.php';</script>";
             } else {
                 echo "<script>alert('Invalid email or password.'); window.location.href = 'BIT102 Assignment 1.html';</script>";
             }
