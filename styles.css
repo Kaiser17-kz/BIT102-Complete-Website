@@ -379,25 +379,6 @@ h2 {
   text-align:center;
 }
 
-.wrapper .social_icon{
-  text-align: center;
-}
-
-.wrapper .form-wrapper .social_icon i{
-  color:rgb(0, 0, 0);
-  padding: 1rem 2rem;
-  cursor: pointer;
-  border:2px solid #162938;
-  margin:0 15px;
-  transition: 1s;
-}
-
-.wrapper .form-wrapper .social_icon i:hover{
-  background: #ffffff;
-  font-size: 2rem;
-  border:2px solid #162938;
-}
-
 header {
   margin-top: 10rem;
   background-color: var(--primary-color);
