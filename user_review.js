@@ -1,6 +1,7 @@
 $(document).ready(function() {
-    var rating_data = 0;
+    var rating_data = 0; //Initialize the rating data
 
+    //This is to update the color appearance of the star after user pick a star rating
     function updateStarColors(rating) {
         $('.feedback_rating span').each(function() {
             if (parseInt($(this).attr('data-rating')) <= rating) {
@@ -11,22 +12,34 @@ $(document).ready(function() {
         });
     }
 
+    //This is when user click on the star rating in the feedback form
     $('.feedback_rating span').click(function() {
-        var rating = parseInt($(this).attr('data-rating'));
-        if (rating_data === rating) {
-            rating_data = 0;
-        } else {
-            rating_data = rating;
+        var rating = parseInt($(this).attr('data-rating')); //Get the rating that user click 
+                                                            //and converts it into integer
+
+        if (rating_data === rating) { //If data rating user click is similar 
+                                      //to the initialize rating in the beginning
+
+            rating_data = 0; //This means that it essentially deselect 
+                             //the rating chose by the user which is 0
+        } else {    
+            rating_data = rating; //Else, this means that the rating chose by 
+                                  //the user is updated into the rating data
         }
-        updateStarColors(rating_data);
+        updateStarColors(rating_data); //It will intialize the update rating color function 
+                                        //and then update the star color based on the rating chosen by the user.
     });
 
-    $('#Submit').click(function(event) {
-        event.preventDefault();
 
-        var user_name = $('#name_text').val().trim();
+    //When user press the submit button
+    $('#Submit').click(function(event) {
+        event.preventDefault(); //Prevent the form from the default submission
+
+        //Trim of all the whitespaces on the name and review commented
+        var user_name = $('#name_text').val().trim(); 
         var user_review = $('#type_text').val().trim();
 
+        //Initialize AJAX response
         $.ajax({
             url: "user_review.rating.php", 
             method: "POST",
@@ -104,7 +117,7 @@ $(document).ready(function() {
                             html += '<strong>' + review.user_Name + '</strong>';
                             html += '<span>@' + review.user_Name + '</span>';
                             html += '</div>';
-                            html += '</div>'; // End of profile div
+                            html += '</div>';
                             html += '<div class="rating">';
                             
                             // Adding star icons based on rating
@@ -122,7 +135,7 @@ $(document).ready(function() {
                             html += '</div>'; // End of reviews_box div
                         });
 
-                        $('#review_content').html(html); // Update existing reviews
+                        $('#review_content').html(html); // Update the html and creates the review bar submitted by user.
                     }
                 }
             },
