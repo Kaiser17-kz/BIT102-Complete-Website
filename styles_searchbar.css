@@ -50,3 +50,8 @@
     text-align: center;
     padding-bottom: 20px;
   }
+
+  .search_bar {
+    position: relative;
+    display: inline-block;
+}
