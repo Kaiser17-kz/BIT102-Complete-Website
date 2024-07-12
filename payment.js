@@ -73,8 +73,8 @@ let listCart = [];
                 // After successful data submission, initiate Razorpay payment
                 var options = {
                     "key": "rzp_test_Fa2Zd592wbGFAT", // Enter the API key here
-                    "amount": totalPrice * 100, // Amount is in currency subunits. Multiply by 100 to convert to paise if INR
-                    "currency": "INR",
+                    "amount": totalPrice * 100, // Amount is in currency subunits. Multiply by 100 to convert to paise if MYR
+                    "currency": "MYR",
                     "name": "DOPAMINE",
                     "description": "Please pay for your shirt",
                     "image": "PIC/dopamine-high-resolution-logo-transparent.png",
@@ -85,7 +85,7 @@ let listCart = [];
                     },
                     "prefill": {
                         "name": document.getElementById('name').value,
-                        "email": "user@example.com",
+                        "email": "support@DPM.com",
                         "contact": document.getElementById('phone').value
                     },
                     "notes": {
