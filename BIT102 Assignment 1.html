@@ -20,13 +20,15 @@
             <li>
                 <section>
                     <div class="search_bar">
-                    <form action="search_result.html" method="GET">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="ri-search-line"></i></button>
-                    </form>
-                    </div>
+                        <form action="search_result.html" method="GET" id="form">
+                            <input type="text" id="search" placeholder="Search.." name="search">
+                            <button type="submit"><i class="ri-search-line"></i></button>
+                        </form>
+                        <div id="display"></div>
+                      </div>
                 </section>
             </li>
+            
             <li class="link"><a href="userprofile.html">USER PROFILE</a><span><i class="ri-user-line"></i></span>
                 <ul class="dropdown">
                     <li><a href="#" class="login-link">Login</a></li>
