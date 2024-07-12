@@ -2,7 +2,7 @@
 session_start();
 if(!isset($_SESSION["username"]))
 {
-   header("location:BIT102 Assignment 1.php");
+    header("location:login.php");
     exit();
 }
 $username = $_SESSION["username"];

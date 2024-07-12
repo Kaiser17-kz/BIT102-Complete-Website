@@ -20,20 +20,18 @@
             <li>
                 <section>
                     <div class="search_bar">
-                        <form action="search_result.html" method="GET" id="form">
-                            <input type="text" id="search" placeholder="Search.." name="search">
-                            <button type="submit"><i class="ri-search-line"></i></button>
-                        </form>
-                        <div id="display"></div>
-                      </div>
+                    <form action="search_result.html" method="GET">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="ri-search-line"></i></button>
+                    </form>
+                    </div>
                 </section>
             </li>
-            
-            <li class="link"><a href="userprofile.html">USER PROFILE</a><span><i class="ri-user-line"></i></span>
+            <li class="link"><a href="userprofile.html" id="user-profile">USER PROFILE</a><span><i class="ri-user-line"></i></span>
                 <ul class="dropdown">
-                    <li><a href="#" class="login-link">Login</a></li>
-                    <li><a href="#" class="register-link">Register</a></li>
-                    <li><a href="logout.php" class="logout-link">Logout</a></li>
+                    <li id="login-link" class="login-link"><a href="#">Login</a></li>
+                    <li id="register-link" class="register-link"><a href="#">Register</a></li>
+                    <li id="logout-link" class="logout-link"><a href="logout.php">Logout</a></li>
                 </ul>
             </li>
             <div class="wrapper">
@@ -85,7 +83,7 @@
                     </form>
                 </div>
                 <script src="auth.js" defer></script>
-            </div>  
+            </div>
 
             <li class="open-cart-btn" onclick="toggleCart()"><a href="#">SHOPPING CART</a><span><i class="ri-shopping-cart-line"></i></span></li>
 
