@@ -1,8 +1,10 @@
+//Text box word limit function//
 document.addEventListener('DOMContentLoaded', function() {
 
+//Get the element id from the text box
 var textType = document.getElementById("type_text");
 var total = document.getElementById("text_total");
-var text_limit = 500;
+var text_limit = 500; //Set text box limit
 
 total.textContent = 0 + "/" + text_limit;
 
