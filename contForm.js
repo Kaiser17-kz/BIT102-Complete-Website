@@ -8,7 +8,7 @@ function sendEmail() {
     
     Email.send({
         Host : "smtp.elasticemail.com",
-        Username : "comdopaminehelpcenter@gmail.",
+        Username : "dopaminehelpcenter@gmail.com",
         Password : "D416958F7C3111C55D9F99F9B1832073708C",
         To : 'dopaminehelpcenter@gmail.com',
         From : "dopaminehelpcenter@gmail.com",

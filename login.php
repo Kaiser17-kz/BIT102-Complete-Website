@@ -33,17 +33,14 @@ if (isset($_POST["login"])) {
         
         if ($user) {
             if (password_verify($password, $user["password"])) {
-                header("Location: BIT102 Assignment 1.html");
-                exit();
+                echo "<script>alert('Login successfully.'); window.location.href = 'BIT102 Assignment 1.html';</script>";
             } else {
-                echo "<div class='alert alert-danger'>Password does not match</div>";
+                echo "<script>alert('Invalid email or password.'); window.location.href = 'BIT102 Assignment 1.html';</script>";
             }
-        } else {
-            echo "<div class='alert alert-danger'>Username does not match</div>";
-        }
     } else {
-        echo "<div class='alert alert-danger'>Something went wrong. Please try again later.</div>";
+        echo "<script>alert('No account found with the username.'); window.location.href = 'BIT102 Assignment 1.html';</script>";
     }
+}
 }
 
 $conn->close();

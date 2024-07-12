@@ -27,9 +27,7 @@ $sql = "CREATE TABLE IF NOT EXISTS users (
     password VARCHAR(255)
 )";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Table 'users' created successfully<br>";
-} else {
+if ($conn->query($sql) !== TRUE) {
     echo "Error creating table: " . $conn->error . "<br>";
 }
 
@@ -68,7 +66,7 @@ if (isset($_POST["submit_register"])) {
 
     if (count($errors) > 0) {
         foreach ($errors as $error) {
-            echo "<div class='alert alert-danger'>$error</div>";
+            echo "<script>alert('$error'); window.location.href = 'BIT102 Assignment 1.html';</script>";
         }
     } else {
         $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
@@ -76,42 +74,42 @@ if (isset($_POST["submit_register"])) {
 
         if (mysqli_stmt_prepare($stmt, $sql)) {
             mysqli_stmt_bind_param($stmt, "sss", $username, $email, $passwordhash);
-            mysqli_stmt_execute($stmt);
+            if (mysqli_stmt_execute($stmt)) {
 
-            // Send a confirmation email
-            $mail = new PHPMailer(true);
+                // Send a confirmation email
+                $mail = new PHPMailer(true);
 
-            try {
-                // Server settings
-                $mail->SMTPDebug = 0;                      // Disable verbose debug output
-                $mail->isSMTP();                           // Set mailer to use SMTP
-                $mail->Host       = 'smtp.gmail.com';      // Specify main and backup SMTP servers
-                $mail->SMTPAuth   = true;                  // Enable SMTP authentication
-                $mail->Username   = 'dopaminehelpcenter@gmail.com'; // SMTP username
-                $mail->Password   = 'itvr cisd cxnk laio'; // SMTP password (or app password if 2FA is enabled)
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption, `ssl` also accepted
-                $mail->Port       = 587;                   // TCP port to connect to
+                try {
+                    // Server settings
+                    $mail->SMTPDebug = 0;                      // Disable verbose debug output
+                    $mail->isSMTP();                           // Set mailer to use SMTP
+                    $mail->Host       = 'smtp.gmail.com';      // Specify main and backup SMTP servers
+                    $mail->SMTPAuth   = true;                  // Enable SMTP authentication
+                    $mail->Username   = 'dopaminehelpcenter@gmail.com'; // SMTP username
+                    $mail->Password   = 'itvr cisd cxnk laio'; // SMTP password (or app password if 2FA is enabled)
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; // Enable TLS encryption, `ssl` also accepted
+                    $mail->Port       = 587;                   // TCP port to connect to
 
-                // Recipients
-                $mail->setFrom('dopaminehelpcenter@gmail.com', 'Dopamine');
-                $mail->addAddress($email, $username); // Add a recipient
+                    // Recipients
+                    $mail->setFrom('dopaminehelpcenter@gmail.com', 'Dopamine');
+                    $mail->addAddress($email, $username); // Add a recipient
 
-                // Content
-                $mail->isHTML(true);                       // Set email format to HTML
-                $mail->Subject = 'Registration Confirmation';
-                $mail->Body    = 'Dear ' . $username . ',<br><br>Thank you for registering on our website.<br><br>Best Regards,<br>Your Website Name';
-                $mail->AltBody = 'Dear ' . $username . ',\n\nThank you for registering on our website.\n\nBest Regards,\nYour Website Name';
+                    // Content
+                    $mail->isHTML(true);                       // Set email format to HTML
+                    $mail->Subject = 'Registration Confirmation';
+                    $mail->Body    = 'Dear ' . $username . ',<br><br>Thank you for registering on our website.<br><br>Best Regards,<br>Your Website Name';
+                    $mail->AltBody = 'Dear ' . $username . ',\n\nThank you for registering on our website.\n\nBest Regards,\nYour Website Name';
 
-                $mail->send();
-                echo 'A confirmation email has been sent.';
-            } catch (Exception $e) {
-                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                    $mail->send();
+                    echo "<script>alert('Registration successful. A confirmation email has been sent.'); window.location.href = 'BIT102 Assignment 1.html';</script>";
+                } catch (Exception $e) {
+                    echo "<script>alert('Registration successful, but the email could not be sent.'); window.location.href = 'BIT102 Assignment 1.html';</script>";
+                }
+            } else {
+                echo "<script>alert('Something went wrong. Please try again later.'); window.location.href = 'BIT102 Assignment 1.html';</script>";
             }
-
-            header("Location: userprofile.html");
-            exit();
         } else {
-            echo "<div class='alert alert-danger'>Something went wrong. Please try again later.</div>";
+            echo "<script>alert('Something went wrong. Please try again later.'); window.location.href = 'BIT102 Assignment 1.html';</script>";
         }
     }
 }
