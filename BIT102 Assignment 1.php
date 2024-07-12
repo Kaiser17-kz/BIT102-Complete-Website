@@ -24,7 +24,7 @@ $username = $_SESSION["username"];
 <body>
     <div class="header__bar">Free Shipping Within Malaysia On All Orders RM150 & above</div>
     <nav class="section__container nav__container">
-        <a href="BIT102 Assignment 1.html"><img src="pic.store/dopamine-logo.png" alt="logo" class="logo-edit"></a>
+        <a href="BIT102 Assignment 1.php"><img src="pic.store/dopamine-logo.png" alt="logo" class="logo-edit"></a>
         <ul class="nav__links">
             <li>
                 <section>
@@ -36,7 +36,7 @@ $username = $_SESSION["username"];
                     </div>
                 </section>
             </li>
-            <li class="link"><a href="userprofile.html" id="user-profile"><?php echo htmlspecialchars($username); ?></a><span><i class="ri-user-line"></i></span>
+            <li class="link"><a href="userprofile.php" id="user-profile"><?php echo htmlspecialchars($username); ?></a><span><i class="ri-user-line"></i></span>
                 <ul class="dropdown">
                     <li id="login-link" class="login-link"><a href="#">Login</a></li>
                     <li id="register-link" class="register-link"><a href="#">Register</a></li>
