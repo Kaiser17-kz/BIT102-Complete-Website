@@ -35,48 +35,54 @@ $(document).ready(function() {
     $('#Submit').click(function(event) {
         event.preventDefault(); //Prevent the form from the default submission
 
-        //Trim of all the whitespaces on the name and review commented
+        //Trim off all the whitespaces on the name and review commented
         var user_name = $('#name_text').val().trim(); 
         var user_review = $('#type_text').val().trim();
 
         //Initialize AJAX response
         $.ajax({
             url: "user_review.rating.php", 
-            method: "POST",
+            method: "POST", //HTTP method
             data: {
                 rating_data: rating_data,
                 user_name: user_name,
                 user_review: user_review
             },
-            success: function(data) {
-                $('#name_text').val('');
+            success: function(data) { //If data connection is successful
+                //Refresh the form fields
+                $('#name_text').val(''); 
                 $('#type_text').val('');
+                //Deselect the user rating and reload the load rating data function
                 rating_data = 0;
                 load_rating_data();
+                //Reset the color of the star appearance 
                 updateStarColors(rating_data);
-                alert(data.message ? data.message : data.error);
+                alert(data.message ? data.message : data.error); //Display message to user based on response
             },
+            //Display error if request to the server failed
             error: function(xhr, status, error) {
-                console.error(xhr.responseText);
-                alert('Error: ' + error);
+                console.error(xhr.responseText); //Display error on console
+                alert('Error: ' + error); //Notify the user regarding the error
             }
         });
 
     });
 
+    //Initialize the intial page load based on the database 
+    //of the rating and reviews set up in MySQL
     load_rating_data();
 
     function load_rating_data(){
-        $.ajax({
+        $.ajax({ //Initialize AJAX response
             url: "user_review.rating.php",
             method: "POST",
-            data: { action: 'load_data' },
-            dataType: "JSON",
+            data: { action: 'load_data' }, //Execute this function in the PHP
+            dataType: "JSON", //JSON type data
             success: function(data) {
                 if (data.error) {
                     alert(data.error);
                 } else {
-                    // Update ratings and reviews
+                    // Update the total ratings and reviews based on the amount of data found in database
                     document.getElementById('average_rating').innerHTML = data.average_rating;
                     document.getElementById('total_review').innerHTML = data.total_review;
 
@@ -106,6 +112,7 @@ $(document).ready(function() {
                     // Update reviews content
                     if (data.review_data.length > 0) {
                         var html = '';
+                        //Print out the review comment box with the rating, user name and comment made by the user
                         data.review_data.forEach(function(review) {
                             html += '<div class="reviews_box">';
                             html += '<div class="box_top">';
@@ -139,6 +146,7 @@ $(document).ready(function() {
                     }
                 }
             },
+            //Display error if request to server failed
             error: function(xhr, status, error) {
                 console.error(xhr.responseText);
                 alert('Error: ' + error);

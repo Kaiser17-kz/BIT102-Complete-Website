@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsCont = document.getElementById('search_results');
 
     if (query) {
+        //Initialize all the clothing product info
         const clothing_info = [
             { img: 'pic.store/color-shirt.jpg', name: 'Colorful Button Shirt', price: 'RM 59.00' },
             { img: 'pic.store/Jacket.avif', name: 'Blue "Actual" Jacket', price: 'RM 79.00' },
@@ -22,10 +23,13 @@ document.addEventListener('DOMContentLoaded', function() {
             { img: 'pic.store/elder1.webp', name: 'Black Elegent Dress', price: 'RM 80.00' }
         ];
 
+        //It will filter the name of the item in the clothing info that matches the query typed by the user
         const filters = clothing_info.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
 
+        //Check if there is more than 1 item available that matches the query
         if (filters.length > 0) {
             filters.forEach(item => {
+                //Update and append the html by displaying all the product that matched the query type in by user.
                 const clothing_card = document.createElement('div');
                 clothing_card.classList.add('musthave__card');
                 clothing_card.innerHTML = 
@@ -35,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 resultsCont.appendChild(clothing_card);
             });
         } else {
+            //Print result not found if there is no product that match the query
             resultsCont.innerHTML = '<h2>No results found.</h2>';
         }
     }
