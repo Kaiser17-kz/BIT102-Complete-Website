@@ -5,6 +5,7 @@ body {
     font-family: "Aptos Black", sans-serif; 
 }
 
+/*Header adjustment*/
 header{
     background-color: black;
     color: white;
@@ -43,6 +44,7 @@ header nav ul li a{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+/*Content*/
 .hero-content {
     font-size: 24px;
     margin-bottom: 20px;
@@ -125,7 +127,7 @@ img {
 
 
 
-
+/*Animation*/
 @keyframes fadeInUp {
     0%{
         opacity: 0;
