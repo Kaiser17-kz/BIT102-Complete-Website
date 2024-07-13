@@ -39,25 +39,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Live search functionality
-    $("#search").keyup(function() {
-        var name = $('#search').val();
-        if (name == "") {
-            $("#display").html("").hide();
-        } else {
-            $.ajax({
-                type: "POST",
-                url: "search_bar.php",
-                data: { search: name },
-                success: function(html) {
-                    $("#display").html(html).show();
-                }
-            });
-        }
-    });
 });
-
-function fill(Value) {
-    $('#search').val(Value);
-    $('#display').hide();
-}
