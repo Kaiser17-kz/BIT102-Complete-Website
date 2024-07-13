@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION["username"]))
+{
+    header("location:login.php");
+    exit();
+}
+$username = $_SESSION["username"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +24,7 @@
 <body>
     <div class="header__bar">Free Shipping Within Malaysia On All Orders RM150 & above</div>
     <nav class="section__container nav__container">
-        <a href="BIT102 Assignment 1.html"><img src="pic.store/dopamine-logo.png" alt="logo" class="logo-edit"></a>
+        <a href="BIT102 Assignment 1.php"><img src="pic.store/dopamine-logo.png" alt="logo" class="logo-edit"></a>
         <ul class="nav__links">
             <li>
                 <section>
@@ -27,7 +36,7 @@
                     </div>
                 </section>
             </li>
-            <li class="link"><a href="userprofile.html" id="user-profile">USER PROFILE</a><span><i class="ri-user-line"></i></span>
+            <li class="link"><a href="userprofile.php" id="user-profile"><?php echo htmlspecialchars($username); ?></a><span><i class="ri-user-line"></i></span>
                 <ul class="dropdown">
                     <li id="login-link" class="login-link"><a href="#">Login</a></li>
                     <li id="register-link" class="register-link"><a href="#">Register</a></li>
@@ -321,7 +330,7 @@
                 </div>
                 <div class="social_button">
                     <div class="social_icon">
-                        <a href="https://www.facebook.com/DoPaMineFashion/"><i class="ri-facebook-box-fill"></i></a>
+                     <a href="https://www.facebook.com/DoPaMineFashion/"><i class="ri-facebook-box-fill"></i></a>
                     </div>
                     <a href="https://www.facebook.com/DoPaMineFashion/"><span>Facebook</span></a>
                 </div>

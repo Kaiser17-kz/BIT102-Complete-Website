@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
     } elseif (isset($_POST["action"])) {
-        // Handle fetching all reviews
+        // Handle fetching all reviews data
         $average_rating = 0;
         $total_review = 0;
         $five_star_review = 0;

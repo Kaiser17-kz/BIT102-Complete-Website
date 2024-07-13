@@ -1,3 +1,26 @@
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('check_login.php')
+    .then(response => response.json())
+    .then(data => {
+        const loginLink = document.getElementById('login-link');
+        const registerLink = document.getElementById('register-link');
+        const logoutLink = document.getElementById('logout-link');
+        const userProfile = document.getElementById('user-profile');
+
+        if (data.loggedin) {
+            loginLink.style.display = 'none';
+            registerLink.style.display = 'none';
+            logoutLink.style.display = 'block';
+            userProfile.textContent = $_SESSION['username']; // Update the profile text
+        } else {
+            loginLink.style.display = 'block';
+            registerLink.style.display = 'block';
+            logoutLink.style.display = 'none';
+            userProfile.textContent = 'USER PROFILE';
+        }
+    });
+});
+
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
 const signUpLink = document.querySelector('.signUp-link');

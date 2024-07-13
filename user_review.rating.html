@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <!--jQuery (to handle Ajax request and event handling)-->
+    <!--jQuery (to handle Ajax request and event handling for updating the total reviews bar)-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!--Javascript BootStrap (to enable behavior for BootStrap)-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -163,6 +163,7 @@
               <div class="col-sm-8">
                 <!-- Progress bars for each star rating -->
                 <p>
+                  <!-- 5 star rating -->
                   <div class="progress-label-left"><b>5</b> <i class="ri-star-fill text-warning"></i></div>
                   <div class="progress-label-right">(<span id="total_five_star_review">0</span>)</div>
                   <div class="progress">
@@ -170,6 +171,7 @@
                   </div>
                 </p>
                 <p>
+                  <!-- 4 star rating -->
                   <div class="progress-label-left"><b>4</b> <i class="ri-star-fill text-warning"></i></div>
                   <div class="progress-label-right">(<span id="total_four_star_review">0</span>)</div>
                   <div class="progress">
@@ -177,6 +179,7 @@
                   </div>
                 </p>
                 <p>
+                  <!-- 3 star rating -->
                   <div class="progress-label-left"><b>3</b> <i class="ri-star-fill text-warning"></i></div>
                   <div class="progress-label-right">(<span id="total_three_star_review">0</span>)</div>
                   <div class="progress">
@@ -184,6 +187,7 @@
                   </div>
                 </p>
                 <p>
+                  <!-- 2 star rating -->
                   <div class="progress-label-left"><b>2</b> <i class="ri-star-fill text-warning"></i></div>
                   <div class="progress-label-right">(<span id="total_two_star_review">0</span>)</div>
                   <div class="progress">
@@ -191,6 +195,7 @@
                   </div>
                 </p>
                 <p>
+                  <!-- 1 star rating -->
                   <div class="progress-label-left"><b>1</b> <i class="ri-star-fill text-warning"></i></div>
                   <div class="progress-label-right">(<span id="total_one_star_review">0</span>)</div>
                   <div class="progress">
@@ -309,6 +314,7 @@
     </footer>
 
     <script src='user_review.js'></script>
+    <script src='textbox.js'></script>
 
   </body>
 </html>
