@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "bit102_assignment"; // Ensure this database exists or create it
+$dbname = "bit102assignment"; // Ensure this database exists or create it
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
