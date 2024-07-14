@@ -5,17 +5,17 @@ $username = "root";
 $password = "";
 $dbname = "bit102assignment";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);  //create connection
 
-$loggedIn = isset($_SESSION["username"]);
+$loggedIn = isset($_SESSION["username"]);                 //check if the user is logged in
 
 if($loggedIn) {
-    $username = $_SESSION["username"];
+    $username = $_SESSION["username"];                    //retrieve the logged-in username
 
     $sql = "SELECT * FROM users WHERE username = '$username'";
     $res = mysqli_query($conn, $sql);
 
-    if($res) {
+    if($res) {                                            //fetch user data and assign to variables
         while($data = mysqli_fetch_assoc($res)) {
             $email = $data['email'];
             $dob = $data['dob'];
@@ -25,16 +25,16 @@ if($loggedIn) {
     }
 
     // Handle form submission
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {      //get new data from the form
         $new_dob = $_POST['dob'];
         $new_phoneNumber = $_POST['phoneNumber'];
         $new_Address = $_POST['Address'];
     
-        $update_sql = "UPDATE users SET dob = ?, phoneNumber = ?, Address = ? WHERE username = ?";
+        $update_sql = "UPDATE users SET dob = ?, phoneNumber = ?, Address = ? WHERE username = ?";     //sql qyery to update user data
         $stmt = $conn->prepare($update_sql);
         $stmt->bind_param("ssss", $new_dob, $new_phoneNumber, $new_Address, $username);
     
-        if ($stmt->execute()) {
+        if ($stmt->execute()) {                                                         //success message or error message
             echo "<script>alert('User information updated successfully!');</script>";
         } else {
             echo "<script>alert('Error updating information.');</script>";
@@ -42,9 +42,9 @@ if($loggedIn) {
     
         $stmt->close();
     }
-} else {
+} else {                                                               //redirect to homepage if user not logged in
     echo "<script>alert('You are not logged in.');</script>";
-    header("Location: login.php");
+    header("Location: BIT102 Assignment 1.html");
     exit();
 }
 ?>
@@ -81,7 +81,6 @@ if($loggedIn) {
         <div class="sidebar">
             <div class="card sidebar-card">
                 <img id="sidebar-img" src="pic.store/userimage.jpeg" class="rounded-circle sidebar-img" width="150" alt="User Image">
-                <input type="file" id="edit-image" class="edit-input" style="display:none;" accept="image/*">
                 <div class="sidebar-content">
                     <h3 id="sidebar-username"><?php echo htmlspecialchars($username); ?></h3>
                         <button class="sidebar-button" id="logout-button"><a href="logout.php">Log Out</a></button>
@@ -96,7 +95,6 @@ if($loggedIn) {
                         <div class="content-row">
                             <div class="content-label">Full Name</div>
                             <div class="content-text" id="username"><?php echo htmlspecialchars($username); ?></div>
-                            <input type="text" id="edit-fullname" class="edit-input" style="display:none;" name="username" value="<?php echo htmlspecialchars($username); ?>">
                         </div>
                         <div class="content-row">
                             <div class="content-label">Date Of Birth</div>
@@ -106,7 +104,6 @@ if($loggedIn) {
                         <div class="content-row">
                             <div class="content-label">Email</div>
                             <div class="content-text" id="email"><?php echo htmlspecialchars($email); ?></div>
-                            <input type="email" id="edit-email" class="edit-input" style="display:none;" name="email" value="<?php echo htmlspecialchars($email); ?>">
                         </div>
                         <hr>
                         <div class="content-row">

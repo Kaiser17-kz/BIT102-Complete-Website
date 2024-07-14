@@ -1,7 +1,7 @@
 /*checks if a user is logged in when the webpage loads */
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('check_login.php')
-    .then(response => response.json()) //process a json response from the server
+    fetch('check_login.php')                                  //send a request to check status
+    .then(response => response.json())                        //process a json response from the server
     .then(data => {
         const loginLink = document.getElementById('login-link');
         const registerLink = document.getElementById('register-link');

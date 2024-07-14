@@ -1,3 +1,4 @@
+/* Handle the submission of contact form */
 const form = document.querySelector('#contact-form');
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
@@ -6,7 +7,7 @@ const messageInput = document.getElementById('message');
 function sendEmail() {
     const bodyMessage = `Name: ${nameInput.value}<br> Email: ${emailInput.value}<br> Message: ${messageInput.value}`;
     
-    Email.send({
+    Email.send({                                            //using SMTP server from Elastic Email
         Host : "smtp.elasticemail.com",
         Username : "dopaminehelpcenter@gmail.com",
         Password : "D416958F7C3111C55D9F99F9B1832073708C",
