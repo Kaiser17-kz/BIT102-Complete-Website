@@ -14,85 +14,77 @@
 <body>
     <div class="header__bar">Free Shipping Within Malaysia On All Orders RM150 & above</div>
     <nav class="section__container nav__container">
-        <a href="http://localhost/WebPro-B2201153_B2301227_B2201031/BIT102%20Assignment%201.html"><img src="pic.store/dopamine-logo.png" alt="logo" class="logo-edit"></a>
+        <a href="BIT102 Assignment 1.html"><img src="pic.store/dopamine-logo.png" alt="logo" class="logo-edit"></a>
         <ul class="nav__links">
             <li>
                 <section>
                     <div class="search_bar">
-                      <form action="search_result.html" method="GET">
-                          <input type="text" id="search" placeholder="Search.." name="search">
-                          <button type="submit"><i class="ri-search-line"></i></button>
-                      </form>
-                      <div id="display"></div>
+                    <form action="search_result.html" method="GET">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="ri-search-line"></i></button>
+                    </form>
                     </div>
                 </section>
             </li>
-            <li class="link"><a href="userprofile.html">USER PROFILE</a><span><i class="ri-user-line"></i></span>
-              <ul class="dropdown">
-                  <li><a href="#" class="login-link">Login</a></li>
-                  <li><a href="#" class="register-link">Register</a></li>
-              </ul>
+            <li class="link"><a href="userprofile.html" id="user-profile">USER PROFILE</a><span><i class="ri-user-line"></i></span>
+                <ul class="dropdown">
+                    <li id="login-link" class="login-link"><a href="#">Login</a></li>
+                    <li id="register-link" class="register-link"><a href="#">Register</a></li>
+                    <li id="logout-link" class="logout-link"><a href="logout.php">Logout</a></li>
+                </ul>
             </li>
-          <div class="wrapper">
-              <span class="icon-close"><i class="ri-close-line" aria-label="Close"></i></span>
-              <div class="form-wrapper sign-in">
-                  <form method="post" action="register.php">
-                      <h2>Login</h2>
-                      <div class="input-group">
-                          <input type="text" required>
-                          <label for="">Username</label>
-                      </div>
-                      <div class="input-group">
-                          <input type="password" required>
-                          <label for="">Password</label>
-                      </div>
-                      <div class="remember-forgot">
-                          <label><input type="checkbox">Remember me</label>
-                          <a href="#">Forgot Password?</a>
-                      </div>
-                      <button type="submit" class="btn">Login</button>
-                      <br>
-                      <p class="or">----------or----------</p>
-                      <div class="sign-link">
-                          <p>Don't have an account? <a href="#" class="signUp-link">Register</a></p>
-                      </div>
-                      <div class="social_icon">
-                          <i class="ri-google-fill"></i>
-                          <i class="ri-facebook-circle-fill"></i>
-                      </div>
-                  </form>
-              </div>
-              <div class="form-wrapper sign-up">
-                  <form method="post" action="register.php">
-                      <h2>Register</h2>
-                      <div class="input-group">
-                          <input type="text" required>
-                          <label for="">Username</label>
-                      </div>
-                      <div class="input-group">
-                          <input type="email" required>
-                          <label for="">Email</label>
-                      </div>
-                      <div class="input-group">
-                          <input type="password" required>
-                          <label for="">Password</label>
-                      </div>
-                      <button type="submit" class="btn">Register</button>
-                      <br>
-                      <p class="or">----------or----------</p>
-                      <div class="sign-link">
-                          <p>Already have an account? <a href="#" class="signIn-link">Login</a></p>
-                      </div>
-                      <div class="social_icon">
-                          <i class="ri-google-fill"></i>
-                          <i class="ri-facebook-circle-fill"></i>
-                      </div>
-                  </form>
-              </div>
-              <script src="auth.js" defer></script>
-          </div>  
+            <div class="wrapper">
+                <span class="icon-close"><i class="ri-close-line" aria-label="Close"></i></span>
+                <div class="form-wrapper sign-in">
+                    <form method="post" action="login.php">
+                        <h2>Login</h2>
+                        <div class="input-group">
+                            <input type="text" name="username" required>
+                            <label for="">Username</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" name="password" required>
+                            <label for="">Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox">Remember me</label>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="submit" name="login" class="btn">Login</button>
+                        <br>
+                        <p class="or">----------or----------</p>
+                        <div class="sign-link">
+                            <p>Don't have an account? <a href="process_registration.php" class="signUp-link">Register</a></p>
+                        </div>
+                    </form>
+                </div>
+                <div class="form-wrapper sign-up">
+                    <form method="post" action="process_registration.php">
+                        <h2>Register</h2>
+                        <div class="input-group">
+                            <input type="text" name="username" required>
+                            <label for="">Username</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="email" required>
+                            <label for="">Email</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="password" name="password" required>
+                            <label for="">Password</label>
+                        </div>
+                        <button type="submit" name="submit_register" class="btn">Register</button>
+                        <br>
+                        <p class="or">----------or----------</p>
+                        <div class="sign-link">
+                            <p>Already have an account? <a href="login.php" class="signIn-link">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+                <script src="auth.js" defer></script>
+            </div>
 
-          <li class="open-cart-btn" onclick="toggleCart()"><a href="#">SHOPPING CART</a><span><i class="ri-shopping-cart-line"></i></span></li>
+            <li class="open-cart-btn" onclick="toggleCart()"><a href="#">SHOPPING CART</a><span><i class="ri-shopping-cart-line"></i></span></li>
 
             <section class="cart" id="cart">
                 <div class="cart-content">
@@ -125,6 +117,7 @@
             <script type="module" src="cart1.js"></script>
             <script type="module" src="addToCart.js"></script>
 
+        </ul>
     </nav>
 
     <!--Resutls of the matched product based on the query enter will display here-->
