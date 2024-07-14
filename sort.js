@@ -5,7 +5,7 @@ const filterItems = document.querySelectorAll('.musthave__nav li');
 const sortingSelect = document.getElementById('sorting');
 const musthaveGrid = document.querySelector('.musthave__grid');
 
-selection.onchange = sortingValue;
+selection.onchange = sortingValue;          //set the onchange event for the sorting selection
 
 function sortingValue() {
 let sortLi;
@@ -26,13 +26,13 @@ let priceB = parseFloat(b.querySelector('p').textContent.replace(/[^\d.]/g, ''))
 return priceB - priceA;
 });
 }
-field.innerHTML = '';
+field.innerHTML = '';                    //clear the grid and append the sorted cards
 sortLi.forEach(card => {
 field.appendChild(card);
 });
 }
 
-filterItems.forEach(item => {
+filterItems.forEach(item => {                                          //show/hide cards based on the selected category
     item.addEventListener('click', function() {
         filterItems.forEach(i => i.classList.remove('active'));
         this.classList.add('active');
