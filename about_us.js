@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to toggle a class for header navigation items
+    // Function to toggle the active class for header navigation items
     function toggleActiveClass(event) {
         const navLinks = document.querySelectorAll('header nav ul li a');
         navLinks.forEach(link => link.classList.remove('active'));
@@ -10,20 +10,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('header nav ul li a');
     navLinks.forEach(link => {
         link.addEventListener('click', function(event) {
-            event.preventDefault();
-            toggleActiveClass(event);
-            // Smooth scrolling to anchor link
-            const targetId = event.target.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
+            const href = event.target.getAttribute('href');
+            const targetId = href.startsWith('#') ? href.substring(1) : null;
+            const targetElement = targetId ? document.getElementById(targetId) : null;
+
             if (targetElement) {
+                // Internal link
+                event.preventDefault();
+                toggleActiveClass(event);
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
+            } else {
+                // External link
+                toggleActiveClass(event);
             }
         });
     });
 
-    // Function to handle scroll behavior (example)
+    // Function to handle scroll behavior
     function scrollToTop() {
         window.scrollTo({
             top: 0,
@@ -31,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Example: Scroll to top button functionality
+    // Scroll to top button functionality
     const scrollToTopButton = document.getElementById('scrollToTopButton');
     if (scrollToTopButton) {
         scrollToTopButton.addEventListener('click', scrollToTop);
