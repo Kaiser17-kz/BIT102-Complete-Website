@@ -1,6 +1,7 @@
+/*checks if a user is logged in when the webpage loads */
 document.addEventListener('DOMContentLoaded', function() {
     fetch('check_login.php')
-    .then(response => response.json())
+    .then(response => response.json()) //process a json response from the server
     .then(data => {
         const loginLink = document.getElementById('login-link');
         const registerLink = document.getElementById('register-link');
@@ -19,41 +20,4 @@ document.addEventListener('DOMContentLoaded', function() {
             userProfile.textContent = 'USER PROFILE';
         }
     });
-});
-
-const loginLinkElement = document.querySelector('.login-link a');
-const registerLinkElement = document.querySelector('.register-link a');
-const signUpLink = document.querySelector('.signUp-link');
-const signInLink = document.querySelector('.signIn-link');
-const closeIcon = document.querySelector('.icon-close');
-const wrapper = document.querySelector('.wrapper');
-
-loginLinkElement.addEventListener('click', (e) => {
-    e.preventDefault();
-    wrapper.style.display = 'flex';
-    document.querySelector('.sign-in').style.display = 'block';
-    document.querySelector('.sign-up').style.display = 'none';
-});
-
-registerLinkElement.addEventListener('click', (e) => {
-    e.preventDefault();
-    wrapper.style.display = 'flex';
-    document.querySelector('.sign-in').style.display = 'none';
-    document.querySelector('.sign-up').style.display = 'block';
-});
-
-signUpLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    document.querySelector('.sign-in').style.display = 'none';
-    document.querySelector('.sign-up').style.display = 'block';
-});
-
-signInLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    document.querySelector('.sign-in').style.display = 'block';
-    document.querySelector('.sign-up').style.display = 'none';
-});
-
-closeIcon.addEventListener('click', function() {
-    wrapper.style.display = 'none';
 });
