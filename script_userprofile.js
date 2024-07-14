@@ -53,3 +53,19 @@ document.getElementById('save-button').addEventListener('click', function() {
     document.getElementById('edit-button').style.display = 'inline';
     document.getElementById('save-button').style.display = 'none';
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const editButton = document.getElementById('edit-button');
+    const saveButton = document.getElementById('save-button');
+    const inputs = document.querySelectorAll('.edit-input');
+
+    editButton.addEventListener('click', function() {
+        inputs.forEach(input => input.style.display = 'block');
+        saveButton.style.display = 'block';
+        editButton.style.display = 'none';
+    });
+
+    saveButton.addEventListener('click', function() {
+        document.querySelector('form').submit();
+    });
+});

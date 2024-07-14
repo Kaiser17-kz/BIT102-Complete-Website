@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             loginLink.style.display = 'none';
             registerLink.style.display = 'none';
             logoutLink.style.display = 'block';
-            userProfile.textContent = $_SESSION['username']; // Update the profile text
+            userProfile.textContent = $_SESSION['username'];
         } else {
             loginLink.style.display = 'block';
             registerLink.style.display = 'block';
@@ -21,21 +21,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-const loginLink = document.querySelector('.login-link');
-const registerLink = document.querySelector('.register-link');
+const loginLinkElement = document.querySelector('.login-link a');
+const registerLinkElement = document.querySelector('.register-link a');
 const signUpLink = document.querySelector('.signUp-link');
 const signInLink = document.querySelector('.signIn-link');
-const wrapper = document.querySelector('.wrapper');
 const closeIcon = document.querySelector('.icon-close');
+const wrapper = document.querySelector('.wrapper');
 
-loginLink.addEventListener('click', (e) => {
+loginLinkElement.addEventListener('click', (e) => {
     e.preventDefault();
     wrapper.style.display = 'flex';
     document.querySelector('.sign-in').style.display = 'block';
     document.querySelector('.sign-up').style.display = 'none';
 });
 
-registerLink.addEventListener('click', (e) => {
+registerLinkElement.addEventListener('click', (e) => {
     e.preventDefault();
     wrapper.style.display = 'flex';
     document.querySelector('.sign-in').style.display = 'none';
