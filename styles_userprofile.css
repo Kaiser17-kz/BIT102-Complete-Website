@@ -232,7 +232,6 @@ input[type="file"] {
   color: #333;
   text-decoration: none;
   transition: 0.3s;
-
 }
 
 
@@ -298,7 +297,6 @@ input[type="file"] {
 
 .contact-form {
   text-align: left;
-  
 }
 
 .contact-form h4 {
@@ -309,7 +307,6 @@ input[type="file"] {
 
 .form-group {
   margin-bottom: 20px;
-  
 }
 
 .form-group textarea{
@@ -318,7 +315,6 @@ input[type="file"] {
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  
 }
 
 .form-group input{
@@ -470,7 +466,7 @@ textarea:focus {
     color: #f1faff ;
     border-radius: 5px;
     align-items: center;
-  }
+}
 
 .ri-youtube-fill{
   color: red ;
