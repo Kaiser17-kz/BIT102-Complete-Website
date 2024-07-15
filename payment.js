@@ -81,7 +81,7 @@ let listCart = [];
                     "handler": function (response){
                         alert('Payment successful. Razorpay Payment ID: ' + response.razorpay_payment_id);
                         // You can now redirect the user to a success page
-                        window.location.href = 'success.html';
+                        window.location.href = 'BIT102 Assignment 1.html';
                     },
                     "prefill": {
                         "name": document.getElementById('name').value,
