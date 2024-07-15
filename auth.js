@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-const loginLinkElement = document.querySelector('.login-link a');                        //login and register form
+/* pop up or hide login and register form */
+const loginLinkElement = document.querySelector('.login-link a');                           
 const registerLinkElement = document.querySelector('.register-link a');
 const signUpLink = document.querySelector('.signUp-link');
 const signInLink = document.querySelector('.signIn-link');
