@@ -34,7 +34,7 @@ header nav ul li a{
 }
 
 .hero {
-    padding: 10px;
+    padding: 10px
 }
 
 .heading h1 {
@@ -42,6 +42,11 @@ header nav ul li a{
     font-size: 2.5em;
     margin-bottom: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
 }
 
 /*Content*/
@@ -95,7 +100,7 @@ img {
     flex: 2;
     text-align: center;
     font-size: 3em;
-    padding: 20px;
+    padding-right: 35px;
     margin-bottom: 15px;
     animation: fadeInDown 2s ease;
     margin-top: 0%;
@@ -124,7 +129,6 @@ img {
 #scrollToTopButton:hover {
     background-color: black;
 }
-
 
 
 /*Animation*/
@@ -161,67 +165,6 @@ img {
     }
 }
 
-.footer__container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-    background-color: white;
-    border-top: 1px solid white;
-  }
-  
-  .footer__heading {
-    color: green;
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-    position: relative;
-  }
-  
-  .footer__heading::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 2px;
-    width: 50px;
-    background-color: brown;
-  }
-  
-  .footer__col p {
-    font-size: 1.0rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    color: var(--text-light);
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .footer__col p:hover {
-    color: rgb(206, 63, 87);
-  }
-  
-  .footer__col p i {
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
-  }
-  
-  .footer__link {
-    display: block;
-    font-size: 1rem;
-    font-style: oblique;
-    margin-bottom: 10px;
-    color: #333;
-    text-decoration: none;
-    transition: 0.3s;
-  
-  }
-
-
-.footer__link:hover {
-    color: rgb(206, 63, 87);
-}
   
   @media (width < 900px) {
     header {
