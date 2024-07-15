@@ -32,16 +32,6 @@ document.getElementById('save-button').addEventListener('click', function() {
     // Update the sidebar with the new username
     document.getElementById('sidebar-username').innerText = document.getElementById('edit-fullname').value;
 
-    // Handle profile image update
-    const fileInput = document.getElementById('edit-image');
-    if (fileInput.files && fileInput.files[0]) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            document.getElementById('sidebar-img').src = e.target.result;
-        }
-        reader.readAsDataURL(fileInput.files[0]);
-    }
-
     // Hide input fields and show text
     const editInputs = document.querySelectorAll('.edit-input');
     editInputs.forEach(input => input.style.display = 'none');
