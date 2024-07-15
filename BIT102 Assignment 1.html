@@ -13,12 +13,14 @@
     <title>DoPaMine One Stop Fashion Shop</title>
 </head>
 <body>
+    <!--Header-->
     <div class="header__bar">Free Shipping Within Malaysia On All Orders RM150 & above</div>
     <nav class="section__container nav__container">
         <a href="BIT102 Assignment 1.html"><img src="pic.store/dopamine-logo.png" alt="logo" class="logo-edit"></a>
         <ul class="nav__links">
             <li>
                 <section>
+                     <!--Search bar-->
                     <div class="search_bar">
                     <form action="search_result.html" method="GET">
                     <input type="text" placeholder="Search.." name="search">
@@ -27,6 +29,7 @@
                     </div>
                 </section>
             </li>
+             <!--User profile-->
             <li class="link"><a href="userprofile.html" id="user-profile">USER PROFILE</a><span><i class="ri-user-line"></i></span>
                 <ul class="dropdown">
                     <li id="login-link" class="login-link"><a href="#">Login</a></li>
@@ -34,6 +37,7 @@
                     <li id="logout-link" class="logout-link"><a href="logout.php">Logout</a></li>
                 </ul>
             </li>
+             <!--Register-->
             <div class="wrapper">
                 <span class="icon-close"><i class="ri-close-line" aria-label="Close"></i></span>
                 <div class="form-wrapper sign-in">
@@ -59,6 +63,7 @@
                         </div>
                     </form>
                 </div>
+                 <!--Sign up-->
                 <div class="form-wrapper sign-up">
                     <form method="post" action="process_registration.php">
                         <h2>Register</h2>
@@ -84,7 +89,7 @@
                 </div>
                 <script src="auth.js" defer></script>
             </div>
-
+             <!--Shopping cart-->
             <li class="open-cart-btn" onclick="toggleCart()"><a href="#">SHOPPING CART</a><span><i class="ri-shopping-cart-line"></i></span></li>
 
             <section class="cart" id="cart">
@@ -120,8 +125,9 @@
 
         </ul>
     </nav>
-
+     <!--Body content-->
     <header>
+         <!--Banner-->
         <div class="section__container header__container">
             <div class="header__content">
                 <p>New Arrivals</p>
@@ -133,7 +139,7 @@
             </div>
         </div>
     </header>
-
+     <!--Must have-->
     <section id="musthave" class="section__container musthave__container">
         <h2 class="section__title">Must Have</h2>
         <ul class="musthave__nav">
@@ -144,6 +150,7 @@
             <li data-category="ACCESSORIES"><a href="javascript:void(0">ACCESSORIES</a></li>
         </ul>
         <div class="filter-condition">
+             <!--Sorting system-->
             <span>Views As </span>
             <select name="sorting" id="sorting">
                 <option value="Default">Default</option>
@@ -152,6 +159,7 @@
             </select>
             <script src="sort.js" defer></script>
         </div>
+         <!--Product Listing-->
         <div class="musthave__grid" data-category="WOMEN">
             <div class="musthave__card" data-category="WOMEN">
                 <img src="pic.store/color-shirt.jpg" alt="Colorful Button Shirt" height="280">
@@ -261,7 +269,7 @@
     </section>
 
     <hr>
-    
+     <!--Contact info-->
     <footer class="section__container footer__container">
         <div class="footer__col">
             <h4 class="footer__heading">CONTACT INFO</h4>
@@ -271,7 +279,7 @@
             <p><i class="ri-question-line"></i><a href="faq.html">FAQ</a></li>
 
         </div>
-
+         <!--Contact Us-->
         <div class="contact_container">
             <h4 class="footer__heading">CONTACT US</h4>
             <div class="contact-wrapper">
@@ -293,13 +301,13 @@
             </div>
             <script src="contForm.js" defer></script>
         </div>
-        
+         <!--About US-->
         <div class="footer__col">
             <h4 class="footer__heading">ABOUT US</h4>
             <a href="About_Us.html" class="footer__link">Learn more</a>
             <a href="user_review.rating.html" class="footer__link">Customer Reviews</a>
         </div>
-        
+         <!--Social Media Integration-->
         <div class="social_media">
             <h4 class="footer__heading">SOCIAL MEDIA LINK</h4>
             <div class="social_cont">
