@@ -881,6 +881,8 @@ textarea:focus {
   transition: all 0.3s ease-out;
   
 }
+
+/*Expand the box when hover*/
 .social_cont .social_button:hover{
   width: 200px;
 }
@@ -895,7 +897,7 @@ textarea:focus {
   line-height: 6px;
   transition: all 0.3s ease-out;
 }
-/*When user hover over the social media icon, it will expand*/
+/*When user hover over the social media icon, it will display the background color based on that social media*/
 .social_cont .social_button:nth-child(1):hover .social_icon{
   background: #e1306c;
 }

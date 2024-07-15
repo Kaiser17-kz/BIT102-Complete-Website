@@ -1,3 +1,5 @@
+
+// List of products
 let products = [
     { id: 1, name: 'Colorful Button Shirt', price: 59.00, image: 'pic.store/color-shirt.jpg' },
     { id: 2, name: 'Blue "Actual" Jacket', price: 79.00, image: 'pic.store/Jacket.avif' },
@@ -31,6 +33,7 @@ export function addToCart(productId) {
     updateCart();
 }
 
+// Items updateded 
 export function updateCart() {
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalContainer = document.getElementById('cart-total');
