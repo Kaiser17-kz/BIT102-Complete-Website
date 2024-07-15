@@ -14,7 +14,7 @@ sortLi = cards.sort((a, b) => {
 return a.textContent.localeCompare(b.textContent);
 });
 } else if (this.value === 'LowToHigh') {
-sortLi = cards.sort((a, b) => {
+sortLi = cards.sort((a, b) => { 
 let priceA = parseFloat(a.querySelector('p').textContent.replace(/[^\d.]/g, ''));
 let priceB = parseFloat(b.querySelector('p').textContent.replace(/[^\d.]/g, ''));
 return priceA - priceB;
