@@ -5,9 +5,7 @@ document.getElementById('edit-button').addEventListener('click', function() {
     const editInputs = document.querySelectorAll('.edit-input');
     editInputs.forEach(input => input.style.display = 'inline');
     
-    document.getElementById('edit-fullname').value = document.getElementById('fullname').innerText;
     document.getElementById('edit-dob').value = document.getElementById('dob').innerText;
-    document.getElementById('edit-email').value = document.getElementById('email').innerText;
     document.getElementById('edit-phone').value = document.getElementById('phone').innerText;
     document.getElementById('edit-address').value = document.getElementById('address').innerText;
 
@@ -23,9 +21,7 @@ document.getElementById('save-button').addEventListener('click', function() {
     console.log('Save button clicked');
 
     // Update the main content with the new values
-    document.getElementById('fullname').innerText = document.getElementById('edit-fullname').value;
     document.getElementById('dob').innerText = document.getElementById('edit-dob').value;
-    document.getElementById('email').innerText = document.getElementById('edit-email').value;
     document.getElementById('phone').innerText = document.getElementById('edit-phone').value;
     document.getElementById('address').innerText = document.getElementById('edit-address').value;
 
